@@ -8,6 +8,27 @@ const Home: React.FC = () => {
     <IonPage>
       <IonContent>
         <DeliverooHeader />
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1>
+        <h1>row</h1><h1>row</h1>
       </IonContent>
     </IonPage>
   );

@@ -1,14 +1,14 @@
 import React from 'react';
-import { IonFab, IonFabButton, IonSegment, IonSegmentButton, IonLabel, IonIcon, IonButton } from '@ionic/react';
-import { personOutline, chevronDown } from 'ionicons/icons';
+import { IonSearchbar, IonFab, IonFabButton, IonSegment, IonSegmentButton, IonLabel, IonIcon, IonButton, IonToolbar } from '@ionic/react';
+import { personOutline, chevronDown, optionsOutline } from 'ionicons/icons';
 import './DeliverooHeader.css';
 
 interface ContainerProps { }
 
 const DeliverooHeader: React.FC<ContainerProps> = () => {
   return (
-    <div className="container ion-padding">
-      <div className="accountLine">
+    <div className="container">
+      <div className="accountLine ion-padding">
         <div className="row">
           <div className="riderImg" /> 
           <div className="deliveryCol">
@@ -28,6 +28,7 @@ const DeliverooHeader: React.FC<ContainerProps> = () => {
           </IonFab>
       </div>
       <IonSegment
+        className="ion-padding"
         onIonChange={e => console.log('Segment selected', e.detail.value)}
         value="Delivery"
       >
@@ -38,6 +39,12 @@ const DeliverooHeader: React.FC<ContainerProps> = () => {
           <IonLabel>Pickup</IonLabel>
         </IonSegmentButton>
       </IonSegment>
+      <div className="row search-bar ion-padding">
+       <IonSearchbar placeholder="Dishes, restaurants or cuisines" className="align-left ion-no-padding"></IonSearchbar>
+       <IonButton fill="clear" className="minus-right-margin">
+              <IonIcon slot="icon-only" size="small" icon={optionsOutline} color="primary" />
+            </IonButton>
+      </div>
     </div>
   );
 };
