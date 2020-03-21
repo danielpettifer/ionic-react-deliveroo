@@ -1,14 +1,6 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
-div[scrollx=true] {
-  overflow-x: auto;
-}
-
-div[scrolly=true] {
-  overflow-y: auto;
-}
-
 /** custom variables **/
 ion-segment {
   --background: transparent;
