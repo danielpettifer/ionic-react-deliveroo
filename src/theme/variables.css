@@ -1,10 +1,33 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
+/** custom variables **/
+ion-segment {
+  --background: transparent;
+  justify-content: flex-start;
+}
+
+ion-segment-button {
+  --background-checked: transparent;
+  --color-checked: white;
+  --background: transparent;
+  --color: #5dc9ba;
+  --background: transparent;
+  --border-radius: 50px;
+  --indicator-color: #5dc9ba;
+  --indicator-box-shadow: 0 0 0 0 transparent;
+  max-width: 50px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  min-height: 10px;
+}
+
 /** Ionic CSS Variables **/
 :root {
+
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: #5dc9ba;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
