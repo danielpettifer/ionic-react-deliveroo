@@ -2,10 +2,11 @@
   border-bottom: 1px solid var(--ion-color-light-shade);
   left: 0;
   min-height: 100px;
-  position: fixed;
+  position: sticky;
   right: 0;
   text-align: center;
   top: 0;
+  background: #fff;
 }
 
 .accountLine {
@@ -61,4 +62,11 @@
   position: relative;
   left: 18px;
   top: 14px;
+}
+
+.align-left {
+  padding-left: unset;
+  -webkit-padding-start: 30px;
+  padding-inline-start: 34px;
+  text-align: left;
 }

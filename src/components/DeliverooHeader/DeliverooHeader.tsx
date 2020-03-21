@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonFab, IonFabButton, IonSegment, IonSegmentButton, IonLabel, IonIcon, IonButton } from '@ionic/react';
+import { IonSearchbar, IonFab, IonFabButton, IonSegment, IonSegmentButton, IonLabel, IonIcon, IonButton } from '@ionic/react';
 import { personOutline, chevronDown } from 'ionicons/icons';
 import './DeliverooHeader.css';
 
@@ -38,6 +38,7 @@ const DeliverooHeader: React.FC<ContainerProps> = () => {
           <IonLabel>Pickup</IonLabel>
         </IonSegmentButton>
       </IonSegment>
+      <IonSearchbar placeholder="Dishes, restaurants or cuisines" className="ion-no-padding"></IonSearchbar>
     </div>
   );
 };
