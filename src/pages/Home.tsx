@@ -18,7 +18,7 @@ const Home: React.FC = () => {
         <DeliverooHeader />
         <DeliverooSegmentControl />
         <DeliverooSearch />
-       <HorizontalCardList />
+        <HorizontalCardList />
       </IonContent>
     </IonPage>
   );
