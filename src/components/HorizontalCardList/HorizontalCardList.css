@@ -1,7 +1,0 @@
-
-.horizontal {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    padding-right: 32px !important;
-  }
