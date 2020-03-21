@@ -3,6 +3,7 @@ import React from 'react';
 import DeliverooHeader from '../components/DeliverooHeader/DeliverooHeader';
 import DeliverooSearch from '../components/DeliverooSearch/DeliverooSearch';
 import DeliverooSegmentControl from '../components/DeliverooSegmentControl/DeliverooSegmentControl';
+import HorizontalCardList from '../components/HorizontalCardList/HorizontalCardList';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -17,27 +18,7 @@ const Home: React.FC = () => {
         <DeliverooHeader />
         <DeliverooSegmentControl />
         <DeliverooSearch />
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1>
-        <h1>row</h1><h1>row</h1>
+       <HorizontalCardList />
       </IonContent>
     </IonPage>
   );
