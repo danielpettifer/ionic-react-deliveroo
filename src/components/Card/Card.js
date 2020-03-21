@@ -11,7 +11,7 @@ const Cardbase = styled.div `
     align-items: flex-end;
     padding: 8px;
     font-size: 10px;
-    background-image: url(${props => props.img});
+    ${'' /* background-image: url(${props => props.img}); */}
     background-size: contain;
 `
 
@@ -25,7 +25,7 @@ const Title = styled.div `
 `
 
 const Card = props => (
-  <Cardbase>
+  <Cardbase style={{ backgroundImage: `url('${props.img}')` }}>
       <Title>{props.title}</Title>
   </Cardbase>
 )
