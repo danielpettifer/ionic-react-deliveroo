@@ -1,6 +1,6 @@
 import React from 'react';
-import { IonSearchbar, IonFab, IonFabButton, IonSegment, IonSegmentButton, IonLabel, IonIcon, IonButton } from '@ionic/react';
-import { personOutline, chevronDown, optionsOutline } from 'ionicons/icons';
+import { IonSearchbar, IonIcon, IonButton } from '@ionic/react';
+import { optionsOutline } from 'ionicons/icons';
 import './DeliverooSearch.css';
 
 class DeliverooSearch extends React.Component {
