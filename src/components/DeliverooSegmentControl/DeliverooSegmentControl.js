@@ -1,7 +1,5 @@
 import React from 'react';
-import { IonSearchbar, IonFab, IonFabButton, IonSegment, IonSegmentButton, IonLabel, IonIcon, IonButton } from '@ionic/react';
-import { personOutline, chevronDown, optionsOutline } from 'ionicons/icons';
-import './DeliverooSegmentControl.css';
+import { IonSegment, IonSegmentButton, IonLabel } from '@ionic/react';
 
 class DeliverooSegmentControl extends React.Component {
 
