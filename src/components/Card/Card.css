@@ -1,6 +1,8 @@
-
-.horizontal {
+.Card {
     display: flex;
-    flex-direction: row;
-    overflow-x: auto;
+    min-width: 64px;
+    height: 64px;
+    border-radius: 5px;
+    background: orange;
+    margin-right: 8px;
   }
