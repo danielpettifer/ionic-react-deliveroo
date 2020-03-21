@@ -1,6 +1,6 @@
 import React from 'react';
-import { IonSearchbar, IonFab, IonFabButton, IonSegment, IonSegmentButton, IonLabel, IonIcon, IonButton } from '@ionic/react';
-import { personOutline, chevronDown, optionsOutline } from 'ionicons/icons';
+import { IonFab, IonFabButton, IonIcon, IonButton } from '@ionic/react';
+import { personOutline, chevronDown } from 'ionicons/icons';
 import './DeliverooHeader.css';
 
 class DeliverooHeader extends React.Component {

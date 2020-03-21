@@ -8,8 +8,8 @@ class DeliverooSearch extends React.Component {
   render() {
     return (
       <div className="row search-bar ion-padding">
-        <IonSearchbar placeholder="Dishes, restaurants or cuisines" className="align-left ion-no-padding"></IonSearchbar>
-        <IonButton fill="clear" className="minus-right-margin">
+        <IonSearchbar width="full" placeholder="Dishes, restaurants or cuisines" className="align-left ion-no-padding"></IonSearchbar>
+        <IonButton fill="clear" className="minus-right-margin" slot="end">
               <IonIcon slot="icon-only" size="small" icon={optionsOutline} color="primary" />
         </IonButton>
       </div>
