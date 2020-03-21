@@ -1,13 +1,13 @@
 .container {
-  border-bottom: 1px solid var(--ion-color-light-tint);
   left: 0;
-  min-height: 100px;
+  max-height: 110px;
   position: sticky;
   right: 0;
   text-align: center;
   top: 0;
   background: #fff;
   padding-top: 32px;
+  z-index: 10;
 }
 
 .accountLine {
@@ -16,22 +16,6 @@
   flex-direction: row;
   justify-content: space-between;
   padding-bottom: 0 !important;
-}
-
-.container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-.container p {
-  font-size: 16px;
-  line-height: 22px;
-  color: #8c8c8c;
-  margin: 0;
-}
-
-.container a {
-  text-decoration: none;
 }
 
 .riderImg {
@@ -49,11 +33,6 @@
   flex-direction: row;
 }
 
-.row.search-bar {
-  border-top: 1px solid var(--ion-color-light-tint);
-  padding-top: 0px;
-  padding-bottom: 0;
-}
 
 .deliveryCol {
   display: flex;
@@ -68,23 +47,4 @@
   position: relative;
   left: 18px;
   top: 14px;
-}
-
-.align-left {
-  padding-left: 40px;
-  -webkit-padding-start: 30px;
-  padding-inline-start: 34px;
-  text-align: left;
-}
-
-.minus-right-margin {
-  position: relative; 
-  top: 4px;
-  margin-right: -16px;
-}
-
-.searchbar-left-aligned.sc-ion-searchbar-ios-h .searchbar-search-icon.sc-ion-searchbar-ios {
-  margin-left: 7px;
-  -webkit-margin-start: 7px;
-  margin-inline-start: 7px;
 }

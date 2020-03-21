@@ -1,0 +1,39 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.row.search-bar {
+  border-top: 1px solid var(--ion-color-light-tint);
+  padding-top: 0px;
+  padding-bottom: 0;
+  position: sticky;
+  top: 100px;
+  left: 0;
+  background: #fff;
+}
+
+.align-left {
+  padding-left: 40px;
+  -webkit-padding-start: 40px;
+  padding-inline-start: 40px;
+  text-align: left;
+}
+
+.minus-right-margin {
+  position: relative; 
+  top: 4px;
+  margin-right: -16px;
+}
+
+.searchbar-left-aligned.sc-ion-searchbar-ios-h .searchbar-search-icon.sc-ion-searchbar-ios {
+  margin-left: 8px;
+  -webkit-margin-start: 8px;
+  margin-inline-start: 8px;
+}
+
+.searchbar-left-aligned.sc-ion-searchbar-ios-h .searchbar-input.sc-ion-searchbar-ios {
+  padding-left: 40px;
+  -webkit-padding-start: 40px;
+  padding-inline-start: 40px;
+}
