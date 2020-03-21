@@ -1,15 +1,12 @@
 import React from 'react';
 import './Card.css';
 
-class Card extends React.Component {
-
-  render() {
-    return (
-      <div className="Card">
-   
-      </div>
-    )
-  }
-}
+const Card = props => (
+  <div 
+    className="Card"
+    style={{ backgroundImage: `url('${props.img}')` }}>
+      <h3>{props.title}</h3>
+  </div>
+)
 
 export default Card;
