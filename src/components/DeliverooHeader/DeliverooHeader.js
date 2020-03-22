@@ -22,7 +22,7 @@ class DeliverooHeader extends React.Component {
             </div>
           </div>
             <IonFab horizontal="end">
-              <IonFabButton size="small" color="light"  routerLink="/home/account">
+              <IonFabButton size="small" color="light" routerLink="/home/account">
                 <IonIcon icon={personOutline} color="primary" />
               </IonFabButton>
             </IonFab>
