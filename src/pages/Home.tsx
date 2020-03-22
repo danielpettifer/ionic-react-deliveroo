@@ -7,6 +7,8 @@ import HorizontalCardList from '../components/HorizontalCardList/HorizontalCardL
 import Card from '../components/Card/Card';
 import './Home.css';
 
+import staticdata from '../staticdata.json';
+
 const Home: React.FC = () => {
   return (
     <IonPage>
@@ -20,14 +22,9 @@ const Home: React.FC = () => {
         <DeliverooSegmentControl />
         <DeliverooSearch />
         <HorizontalCardList>
-          <Card 
-            title="Noodles"
-            img="https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg"
-          />
-          <Card
-            title="Burgers"
-            img="https://www.thechunkychef.com/wp-content/uploads/2015/09/Dr-Pepper-BBQ-Burgers-8-500x375.jpg"
-          />
+          {staticdata.smallCards.map(card => (
+            <Card title={card.title} image={card.img} />
+          ))}
         </HorizontalCardList>
       </IonContent>
     </IonPage>
