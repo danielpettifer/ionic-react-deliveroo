@@ -1,5 +1,6 @@
 import { IonContent, IonPage } from '@ionic/react';
 import React from 'react';
+import staticdata from '../staticdata.json';
 import DeliverooHeader from '../components/DeliverooHeader/DeliverooHeader';
 import DeliverooSearch from '../components/DeliverooSearch/DeliverooSearch';
 import DeliverooSegmentControl from '../components/DeliverooSegmentControl/DeliverooSegmentControl';
@@ -9,17 +10,10 @@ import Card from '../components/Card/Card';
 
 import './Home.css';
 
-import staticdata from '../staticdata.json';
-
 const Home: React.FC = () => {
   return (
     <IonPage>
-      <IonContent 
-        scrollEvents={true}
-        onIonScrollStart={() => {
-         console.log('scrolled')
-        }}
-      >
+      <IonContent>
         <DeliverooHeader />
         <DeliverooSegmentControl />
         <DeliverooSearch />
@@ -29,8 +23,8 @@ const Home: React.FC = () => {
           ))}
         </HorizontalCardList>
         <Notice
-          title="test"
-          content="some content"
+          title="Contact-free delivery"
+          content="Your rider will knock, place your order at your door and wait nearby to make sure you receive it."
         />
       </IonContent>
     </IonPage>

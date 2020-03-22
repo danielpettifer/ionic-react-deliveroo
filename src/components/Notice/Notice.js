@@ -9,7 +9,7 @@ const NoticeCard = styled.div `
     background: var(--ion-color-primary);
     margin-right: 8px;
     align-items: flex-start;
-    padding: 16px 8px;
+    padding: 16px;
     font-size: 10px;
     ${'' /* background-image: url(${props => props.img}); */}
     background-size: contain;
