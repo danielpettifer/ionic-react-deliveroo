@@ -1,0 +1,28 @@
+{
+    "smallCards": [
+        {
+            "title" : "burgers",
+            "img" : "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg"
+        },
+        {
+            "title" : "burgers2",
+            "img" : "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg"
+        },
+        {
+            "title" : "burgers3",
+            "img" : "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg"
+        },
+        {
+            "title" : "burgers4",
+            "img" : "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg"
+        },
+        {
+            "title" : "burgers5",
+            "img" : "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg"
+        },
+        {
+            "title" : "burgers6",
+            "img" : "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg"
+        }
+    ]
+}
