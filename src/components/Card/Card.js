@@ -1,19 +1,12 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const Cardbase = styled.div `
-    display: flex;
-    min-width: 80px;
-    height: 80px;
-    border-radius: 5px;
-    background: orange;
-    margin-right: 8px;
-    align-items: flex-end;
-    padding: 8px;
-    font-size: 10px;
-    background-size: contain;
-    position: relative;
-`
+const Card = props => (
+  <Cardbase>
+      <Title>{props.title}</Title>
+      <CardImage image={props.image}></CardImage>
+  </Cardbase>
+)
 
 const CardImage = styled.div `
     position: absolute;
@@ -33,13 +26,22 @@ const Title = styled.div `
     color: #fff;
     font-weight: 600;
     margin-bottom: 4px;
+    z-index: 1;
 `
 
-const Card = props => (
-  <Cardbase>
-      <Title>{props.title}</Title>
-      <CardImage image={props.img}></CardImage>
-  </Cardbase>
-)
+const Cardbase = styled.div `
+    display: flex;
+    min-width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    background: var(--ion-color-light-shade);
+    margin-right: 8px;
+    align-items: flex-end;
+    padding: 8px;
+    font-size: 10px;
+    background-size: contain;
+    position: relative;
+    overflow: hidden;
+`
 
 export default Card;
