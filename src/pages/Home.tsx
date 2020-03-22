@@ -4,7 +4,10 @@ import DeliverooHeader from '../components/DeliverooHeader/DeliverooHeader';
 import DeliverooSearch from '../components/DeliverooSearch/DeliverooSearch';
 import DeliverooSegmentControl from '../components/DeliverooSegmentControl/DeliverooSegmentControl';
 import HorizontalCardList from '../components/HorizontalCardList/HorizontalCardList';
+import Card from '../components/Card/Card';
 import './Home.css';
+
+import staticdata from '../staticdata.json';
 
 const Home: React.FC = () => {
   return (
@@ -18,7 +21,11 @@ const Home: React.FC = () => {
         <DeliverooHeader />
         <DeliverooSegmentControl />
         <DeliverooSearch />
-        <HorizontalCardList />
+        <HorizontalCardList>
+          {staticdata.smallCards.map(card => (
+            <Card title={card.title} image={card.img} />
+          ))}
+        </HorizontalCardList>
       </IonContent>
     </IonPage>
   );
