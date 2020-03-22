@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonButton } from '@ionic/react';
+import { IonLabel, IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonButton, IonList, IonListHeader, IonItem } from '@ionic/react';
 import React from 'react';
 // import { styled } from 'styled-components';
 
@@ -14,6 +14,19 @@ const Account = () => {
             </IonToolbar>
         </IonHeader>
         <IonContent color="light">
+            <IonList>
+                <IonListHeader>
+                    Personal
+                </IonListHeader>
+                <IonItem>
+                    My orders
+                </IonItem>
+                <IonItem button routerLink="/home/account/orders" detail>
+                    <IonLabel>
+                        My orders
+                    </IonLabel>
+                </IonItem>
+            </IonList>
            <IonButton routerLink="/home/account/orders">
                 Go to Orders page
            </IonButton>

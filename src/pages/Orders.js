@@ -10,7 +10,7 @@ const Orders = () => {
                 <IonButtons slot="start">
                 <IonBackButton defaultHref="/account" />
                 </IonButtons>
-                <IonTitle>Orders</IonTitle>
+                <IonTitle>My Orders</IonTitle>
             </IonToolbar>
         </IonHeader>
         <IonContent color="light">
