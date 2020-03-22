@@ -1,4 +1,5 @@
-import { IonLabel, IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonButton, IonList, IonListHeader, IonItem } from '@ionic/react';
+import { IonLabel, IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonList, IonItem, IonIcon } from '@ionic/react';
+import { newspaperOutline } from 'ionicons/icons';
 import React from 'react';
 // import { styled } from 'styled-components';
 
@@ -8,28 +9,20 @@ const Account = () => {
         <IonHeader>
             <IonToolbar>
                 <IonButtons slot="start">
-                <IonBackButton defaultHref="/" />
+                    <IonBackButton defaultHref="/" />
                 </IonButtons>
                 <IonTitle>My Account</IonTitle>
             </IonToolbar>
         </IonHeader>
         <IonContent color="light">
             <IonList>
-                <IonListHeader>
-                    Personal
-                </IonListHeader>
-                <IonItem>
-                    My orders
-                </IonItem>
-                <IonItem button routerLink="/home/account/orders" detail>
+                <IonItem lines="full" button routerLink="/home/account/orders" detail>
+                 <IonIcon icon={newspaperOutline} slot="start" size="small" />
                     <IonLabel>
                         My orders
                     </IonLabel>
                 </IonItem>
             </IonList>
-           <IonButton routerLink="/home/account/orders">
-                Go to Orders page
-           </IonButton>
         </IonContent>
     </IonPage>
   );
