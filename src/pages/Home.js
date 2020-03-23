@@ -1,5 +1,5 @@
-import { IonContent, IonPage } from '@ionic/react';
 import React from 'react';
+import { IonContent, IonPage } from '@ionic/react';
 import staticdata from '../staticdata.json';
 import DeliverooHeader from '../components/DeliverooHeader/DeliverooHeader';
 import DeliverooSearch from '../components/DeliverooSearch/DeliverooSearch';
@@ -8,9 +8,12 @@ import HorizontalCardList from '../components/HorizontalCardList/HorizontalCardL
 import Notice from '../components/Notice/Notice';
 import Card from '../components/Card/Card';
 
+
 import './Home.css';
 
-const Home: React.FC = () => {
+export const Home = () => {
+
+
   return (
     <IonPage>
       <IonContent>
