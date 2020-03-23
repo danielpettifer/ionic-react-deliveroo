@@ -3,12 +3,9 @@ import { IonIcon } from '@ionic/react';
 import { chevronForward} from 'ionicons/icons';
 import styled from 'styled-components'
 
-
 const OrderCard = props => (
   <Cardbase>
-    <Column>
         <CardImage image={props.image}></CardImage>
-    </Column>
     <Column>
         <Status>{props.status}</Status>
         <Name>{props.name}</Name>
@@ -18,30 +15,47 @@ const OrderCard = props => (
             <Time>{props.timestamp}</Time>
         </Row>
     </Column>
-    <Column>
-        <IonIcon icon={ chevronForward } color="primary" />
-    </Column>
+    <ColumnEnd>
+        <IonIcon icon={ chevronForward } color="primary" size="" />
+    </ColumnEnd>
       
   </Cardbase>
 )
 
 const Status = styled.div `
+    text-transform: capitalize;
+    color: var(--ion-color-medium-tint);
 `
 
 const Name = styled.div `
+    font-size: 14px;
 `
 
 const Total = styled.div `
+    font-size: 14px;
 `
 
 const Time = styled.div `
+    font-size: 14px;
 `
 
 const Column = styled.div `
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding: 16px;
+    width: 100%;
+`
+
+const ColumnEnd = styled.div `
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 64px;
+
+    > svg {
+        min-width: 64px;
+    }
 `
 
 const Row = styled.div `
@@ -51,25 +65,15 @@ const Row = styled.div `
 `
 
 const CardImage = styled.div `
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+    height: 48px;
+    min-width: 48px;
+    border-radius:50%;
     display: block;
     background-image: url(${props => props.image});
     background-size: cover;
 `
 
-const Title = styled.div `
-    font-size: 12px;
-    line-height: 12px;
-    text-transform: capitalize;
-    color: #fff;
-    font-weight: 600;
-    margin-bottom: 4px;
-    z-index: 1;
-`
 
 const Cardbase = styled.div `
     display: flex;
@@ -77,11 +81,11 @@ const Cardbase = styled.div `
     min-width: 80px;
     height: 80px;
     border-radius: 5px;
-    background: var(--ion-color-light-shade);
-    margin-right: 8px;
-    align-items: flex-end;
-    padding: 8px;
-    font-size: 10px;
+    background: #fff;
+    border-top: 1px solid var(--ion-color-light);
+    align-items: center;
+    padding: 16px;
+    font-size: 14px;
     background-size: contain;
     position: relative;
     overflow: hidden;

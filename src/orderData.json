@@ -2,8 +2,8 @@
     "orders": [
         {
             "status" : "delivered",
-            "restaurantName" : "Sichuan Folk",
-            "mealTotal" : "23.18",
+            "name" : "Sichuan Folk",
+            "total" : "23.18",
             "timestamp" : "21 March 2020",
             "img" : "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg"
         }

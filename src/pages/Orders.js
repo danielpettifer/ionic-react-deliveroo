@@ -25,7 +25,7 @@ const Orders = () => {
 
             {orderData.orders.map(card => (
                 <OrderCard 
-                    image={card.image}
+                    image={card.img}
                     status={card.status}
                     name={card.name}
                     total={card.total}
