@@ -13,7 +13,7 @@ interface OrderListItemProps {
 
 const OrderListItem: React.FC<OrderListItemProps> = ({ order }) => {
   return (
-    <IonItem routerLink={`/orderdetail/${order.id}`} detail={false} lines="full">
+    <IonItem routerLink={`/home/account/orders/orderdetail/${order.id}`} detail={false} lines="full">
       <IonAvatar slot="start">
         <img src={order.image} alt="restaurant" />
       </IonAvatar>

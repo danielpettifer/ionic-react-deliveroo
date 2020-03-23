@@ -30,17 +30,31 @@ const OrderDetail: React.FC<ViewOrderProps> = ({ match }) => {
                     <IonButtons slot="start">
                         <IonBackButton
                             defaultHref="/account"
-                            text="{order.name}"
+                            text="My Orders"
                         />
 
                     </IonButtons>
-                    <IonTitle>Order detail</IonTitle>
+                    <IonTitle>
+                        {order ? (
+                            <>
+                                {order.name}
+                            </>
+
+                        ) :
+
+                            <>
+                                unkown
+                            </>
+                        }
+
+
+                    </IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent color="light">
                 {order ? (
                     <>
-                        test
+                        {order.name}
                     </>
 
                 ) : <div>No orders</div>}
