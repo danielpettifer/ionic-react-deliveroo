@@ -22,7 +22,7 @@ const orders: Order[] = [
     total: '23.18',
     datetime: '21 March 2020',
     image: 'https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg',
-    id: 0
+    id: 1
   }
 ];
 

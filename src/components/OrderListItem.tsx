@@ -13,20 +13,7 @@ interface OrderListItemProps {
 
 const OrderListItem: React.FC<OrderListItemProps> = ({ order }) => {
   return (
-    // <IonItem routerLink={`/order/${order.id}`} detail={false}>
-    //   <div slot="start" className="dot dot-unread"></div>
-    //   <IonLabel className="ion-text-wrap">
-    //     <h2>
-    //       {order.status}
-    //       <span className="date">
-    //         <IonNote>{order.datetime}</IonNote>
-    //       </span>
-    //     </h2>
-    //     <h3>{order.name}</h3>
-
-    //   </IonLabel>
-    // </IonItem>
-    <IonItem routerLink={`/order/${order.id}`} detail={false} lines="full">
+    <IonItem routerLink={`/orderdetail/${order.id}`} detail={false} lines="full">
       <IonAvatar slot="start">
         <img src={order.image} alt="restaurant" />
       </IonAvatar>
