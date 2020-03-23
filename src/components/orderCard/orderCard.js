@@ -1,6 +1,6 @@
 import React from 'react';
-// import { IonIcon } from '../../../node_modules/@ionic/react';
-// import { chevronRight} from 'ionicons/icon';
+import { IonIcon } from '@ionic/react';
+import { chevronForward} from 'ionicons/icons';
 import styled from 'styled-components'
 
 
@@ -19,7 +19,7 @@ const OrderCard = props => (
         </Row>
     </Column>
     <Column>
-        {/* <IonIcon icon={ chevronRight } /> */}
+        <IonIcon icon={ chevronForward } color="primary" />
     </Column>
       
   </Cardbase>

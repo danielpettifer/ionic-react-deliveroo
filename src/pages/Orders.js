@@ -2,6 +2,7 @@ import { IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, 
 import OrderCard from '../components/orderCard/orderCard';
 import orderData from '../orderData.json';
 import React from 'react';
+import styled from '../../node_modules/styled-components';
 // import { styled } from 'styled-components';
 
 const Orders = () => {
@@ -20,7 +21,7 @@ const Orders = () => {
             </IonToolbar>
         </IonHeader>
         <IonContent color="light">
-           <h1>orders</h1>
+           <OrderTotal>COMPLETED ({OrderCard.length})</OrderTotal>
 
             {orderData.orders.map(card => (
                 <OrderCard 
@@ -35,5 +36,11 @@ const Orders = () => {
     </IonPage>
   );
 };
+
+const OrderTotal = styled.div `
+    font-weight: 800;
+    font-size:14px;
+    padding: 16px;
+`
 
 export default Orders;
