@@ -10,7 +10,7 @@ const OrderCard = props => (
         <Status>{props.status}</Status>
         <Name>{props.name}</Name>
         <Row>
-            <Total>{props.total}</Total>
+            <Total>£{props.total}</Total>
             •
             <Time>{props.timestamp}</Time>
         </Row>
@@ -33,6 +33,7 @@ const Name = styled.div `
 
 const Total = styled.div `
     font-size: 14px;
+    margin-right: 8px;
 `
 
 const Time = styled.div `
@@ -89,6 +90,7 @@ const Cardbase = styled.div `
     background-size: contain;
     position: relative;
     overflow: hidden;
+    margin-bottom: 8px;
 `
 
 export default OrderCard;

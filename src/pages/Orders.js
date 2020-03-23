@@ -1,9 +1,7 @@
-import { IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle } from '@ionic/react';
-import OrderCard from '../components/orderCard/orderCard';
-import orderData from '../orderData.json';
 import React from 'react';
+import { IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonItem, IonAvatar, IonLabel } from '@ionic/react';
+import orderData from '../orderData.json';
 import styled from '../../node_modules/styled-components';
-// import { styled } from 'styled-components';
 
 const Orders = () => {
   return (
@@ -21,16 +19,21 @@ const Orders = () => {
             </IonToolbar>
         </IonHeader>
         <IonContent color="light">
-           <OrderTotal>COMPLETED ({OrderCard.length})</OrderTotal>
+           <OrderTotal>COMPLETED ({orderData.orders.length})</OrderTotal>
 
             {orderData.orders.map(card => (
-                <OrderCard 
-                    image={card.img}
-                    status={card.status}
-                    name={card.name}
-                    total={card.total}
-                    timestamp={card.timestamp}
-                />
+                <IonItem routerLink="/home/account/orders/orderdetail"
+                lines="full">
+                    <IonAvatar size="large" slot="start">
+                        <img src={card.img} alt="restaurant" />
+                    </IonAvatar>
+                    <IonLabel>
+                        <Status>{card.status}</Status>
+                        <h3>{card.name}</h3>
+                        <h3>£{card.total} • {card.timestamp}</h3>
+                    </IonLabel>
+
+                </IonItem>
             ))}
         </IonContent>
     </IonPage>
@@ -41,6 +44,13 @@ const OrderTotal = styled.div `
     font-weight: 800;
     font-size:14px;
     padding: 16px;
+`
+
+const Status = styled.div `
+    text-transform: capitalize;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: var(--ion-color-medium-tint)
 `
 
 export default Orders;
