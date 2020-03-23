@@ -1,15 +1,15 @@
 import React from 'react';
-import {IonHeader, IonContent, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon} from '@ionic/react';
+import { IonHeader, IonContent, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon } from '@ionic/react';
 
 type FilterModalProps = {
-    closeAction: Function;
-  }
+  closeAction: Function;
+}
 
 class FilterModal extends React.Component<FilterModalProps> {
 
   render() {
     return <>
-     <IonHeader>
+      <IonHeader>
         <IonToolbar color="primary">
           <IonTitle>Filter</IonTitle>
           <IonButtons slot="end">
@@ -34,7 +34,7 @@ class FilterModal extends React.Component<FilterModalProps> {
 
 }
 
-export default ({closeAction}: { closeAction: Function }) => (
-    <FilterModal closeAction={closeAction}>
-    </FilterModal>
-  )
+export default ({ closeAction }: { closeAction: Function }) => (
+  <FilterModal closeAction={closeAction}>
+  </FilterModal>
+)
