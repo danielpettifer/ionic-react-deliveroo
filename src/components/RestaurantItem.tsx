@@ -73,7 +73,7 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
           <h3>({restaurant.ratingCount}+) • {restaurant.food}</h3>
         </Row>
         <Row>
-        <h3>{restaurant.distance} miles away • {restaurant.deliveryCost} delivery</h3>
+        <h3>{restaurant.distance} miles away • £{restaurant.deliveryCost} delivery</h3>
         </Row>
         {restaurant.bundle && 
         <Row className="orange">
