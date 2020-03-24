@@ -1,12 +1,10 @@
 import React, { useRef, useState } from 'react';
 import { IonContent, IonPage, useIonViewWillEnter } from '@ionic/react';
-import staticdata from '../staticdata.json';
 import MainHeader from '../components/MainHeader/MainHeader';
 import MainSearch from '../components/MainSearch/MainSearch';
 import MainSegmentControl from '../components/MainSegmentControl/MainSegmentControl';
 import HorizontalCardList from '../components/HorizontalCardList/HorizontalCardList';
 import Notice from '../components/Notice/Notice';
-import Card from '../components/Card/Card';
 import CategoryListItem from '../components/CategoryItem';
 import RestaurantItem from '../components/RestaurantItem';
 import { Category, getCategories } from '../data/categories';

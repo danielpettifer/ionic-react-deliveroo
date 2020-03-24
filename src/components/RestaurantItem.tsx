@@ -21,7 +21,6 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
         <h3>{restaurant.name}</h3>
         <h3>£{restaurant.food} • {restaurant.status}</h3>
       </IonLabel>
-
     </IonItem>
   );
 };
