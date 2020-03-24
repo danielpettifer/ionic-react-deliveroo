@@ -12,9 +12,6 @@ import { Restaurant, getRestaurants } from '../data/restaurants';
 
 import './Home.css';
 
-
-
-
 const Home: React.FC = () => {
   // const pageRef = useRef;
   const [categories, setCategories] = useState<Category[]>([]);

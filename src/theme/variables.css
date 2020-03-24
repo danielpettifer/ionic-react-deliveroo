@@ -15,6 +15,20 @@ ion-segment {
   margin-right: -8px;
 }
 
+.card-width-large {
+  min-width: 275px;
+  position: relative;
+  box-shadow: none !important;
+  margin-right: 0px;
+}
+
+.card-image-wide {
+  max-height: 150px;
+  min-width: 275px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 .category-list-item > img {
   position: absolute;
   width: 100%;
