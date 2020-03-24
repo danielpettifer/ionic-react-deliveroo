@@ -4,8 +4,16 @@ import { optionsOutline } from 'ionicons/icons';
 import FilterModal from '../../modals/FilterModal';
 import './DeliverooSearch.css';
 
-export const DeliverooSearch: React.FC = () => {
+interface DeliverooSearchPropsPageRef {
+    current: HTMLElement
+}
 
+interface DeliverooSearchProps {
+    pageRef: DeliverooSearchPropsPageRef;
+}
+
+export const DeliverooSearch = ({pageRef}: DeliverooSearchProps) => {
+  console.log({pageRef});
   const [showModal, setShowModal] = useState(false);
 
   async function closeModal() {
@@ -21,7 +29,7 @@ export const DeliverooSearch: React.FC = () => {
       <IonModal
         isOpen={showModal}
         swipeToClose={true}
-        // presentingElement={mainPage}
+        presentingElement={pageRef.current}
         onDidDismiss={() => setShowModal(false)}
       >
         <FilterModal closeAction={closeModal}></FilterModal>
