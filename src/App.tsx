@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Account from './pages/Account';
 import Orders from './pages/Orders';
 import OrdersDetail from './pages/OrderDetail';
+import CategoryDetail from './pages/CategoryDetail';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -26,6 +27,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
@@ -34,6 +36,7 @@ const App: React.FC = () => (
         <Route path="/home/account" component={Account} exact={true} />
         <Route path="/home/account/orders" component={Orders} exact={true} />
         <Route path="/home/account/orders/orderdetail/:id" component={OrdersDetail} exact={true} />
+        <Route path="/home/categorydetail/:id" component={CategoryDetail} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/home" />} />
       </IonRouterOutlet>
     </IonReactRouter>
