@@ -36,7 +36,7 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
         <Name>{restaurant.name}</Name>
         <Row>
           <Rating
-            className={`banner ${restaurant.rating < 4.5 ? "fiveStar" : "nope"}`}
+            className={`${restaurant.rating < 5 ? "fiveStar" : "nope"}`}
           >
             <IonIcon
               className="canChange"
@@ -45,6 +45,9 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
               size="small"
             />
             {restaurant.rating}
+            <RatingLabel>
+              {restaurant.rating < 5 ? (<> boo </>) : (<>test</>)}
+            </RatingLabel>
           </Rating>
           <h3>({restaurant.ratingCount}+) • {restaurant.food}</h3>
         </Row>
@@ -52,7 +55,10 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
     </IonCard>
   );
 };
-
+const RatingLabel = styled.div`
+  margin-right: 4px;
+  margin-left: 8px;
+`
 const TimeLabel = styled.div`
   position: absolute;
   top: 115px;
@@ -93,6 +99,7 @@ const Rating = styled.div`
 
     > .canChange {
       fill: red !important;
+      margin-right: 8px;
     }
   }
 `
