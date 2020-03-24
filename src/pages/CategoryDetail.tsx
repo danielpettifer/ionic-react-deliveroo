@@ -29,8 +29,8 @@ const CategoryDetail: React.FC<ViewCategoryProps> = ({ match }) => {
                 <IonToolbar>
                     <IonButtons slot="start">
                         <IonBackButton
-                            defaultHref="/account"
-                            text="My Orders"
+                            defaultHref="/"
+                            text=""
                         />
 
                     </IonButtons>
