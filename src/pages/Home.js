@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import { IonContent, IonPage } from '@ionic/react';
 import staticdata from '../staticdata.json';
 import DeliverooHeader from '../components/DeliverooHeader/DeliverooHeader';
@@ -8,18 +8,17 @@ import HorizontalCardList from '../components/HorizontalCardList/HorizontalCardL
 import Notice from '../components/Notice/Notice';
 import Card from '../components/Card/Card';
 
-
 import './Home.css';
 
 export const Home = () => {
-
+  const pageRef = useRef(null);
 
   return (
-    <IonPage>
-      <IonContent>
+    <IonPage ref={pageRef}>
+        <IonContent>
         <DeliverooHeader />
         <DeliverooSegmentControl />
-        <DeliverooSearch />
+        <DeliverooSearch pageRef={pageRef} />
         <HorizontalCardList>
           {staticdata.smallCards.map(card => (
             <Card title={card.title} image={card.img} />
