@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { IonSearchbar, IonIcon, IonButton, IonModal } from '@ionic/react';
 import { optionsOutline } from 'ionicons/icons';
 import FilterModal from '../../modals/FilterModal';
-import './DeliverooSearch.css';
+import './MainSearch.css';
 
-interface DeliverooSearchPropsPageRef {
+interface MainSearchPropsPageRef {
   current: HTMLElement
 }
 
-interface DeliverooSearchProps {
-  pageRef: DeliverooSearchPropsPageRef;
+interface MainSearchProps {
+  pageRef: MainSearchPropsPageRef;
 }
 
-export const DeliverooSearch = ({ pageRef }: DeliverooSearchProps) => {
+export const MainSearch = ({ pageRef }: MainSearchProps) => {
   console.log({ pageRef });
   const [showModal, setShowModal] = useState(false);
 
@@ -40,4 +40,4 @@ export const DeliverooSearch = ({ pageRef }: DeliverooSearchProps) => {
 }
 
 
-export default DeliverooSearch;
+export default MainSearch;
