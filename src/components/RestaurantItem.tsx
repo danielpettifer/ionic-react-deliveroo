@@ -35,12 +35,18 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
       <IonLabel>
         <Name>{restaurant.name}</Name>
         <Row>
-          <Rating>
-            <IonIcon icon={star} color="primary" size="small" />
+          <Rating
+            className={`banner ${restaurant.rating < 4.5 ? "fiveStar" : "nope"}`}
+          >
+            <IonIcon
+              className="canChange"
+              icon={star}
+              color="primary"
+              size="small"
+            />
             {restaurant.rating}
           </Rating>
           <h3>({restaurant.ratingCount}+) • {restaurant.food}</h3>
-
         </Row>
       </IonLabel>
     </IonCard>
@@ -81,6 +87,14 @@ const Rating = styled.div`
   color: green;
   display: flex;
   align-items: center;
+
+  &.fiveStar {
+    color: red;
+
+    > .canChange {
+      fill: red !important;
+    }
+  }
 `
 
 const Row = styled.div`
