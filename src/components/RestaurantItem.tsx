@@ -13,6 +13,7 @@ interface RestaurantItemProps {
 }
 
 const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
+
   return (
     <IonCard
       className="card-width-large"
@@ -36,7 +37,7 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
         <Name>{restaurant.name}</Name>
         <Row>
           <Rating
-            className={`${restaurant.rating < 5 ? "fiveStar" : "nope"}`}
+            className={`${restaurant.rating > 0 ? "oneStar" : null} ${restaurant.rating > 1 ? "twoStar" : null} ${restaurant.rating > 2 ? "threeStar" : null} ${restaurant.rating > 3 ? "fourStar" : null} ${restaurant.rating > 4 ? "fiveStar" : null}`}
           >
             <IonIcon
               className="canChange"
@@ -46,7 +47,7 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
             />
             {restaurant.rating}
             <RatingLabel>
-              {restaurant.rating < 5 ? (<> boo </>) : (<>test</>)}
+              Excellent
             </RatingLabel>
           </Rating>
           <h3>({restaurant.ratingCount}+) • {restaurant.food}</h3>
@@ -55,6 +56,7 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
     </IonCard>
   );
 };
+
 const RatingLabel = styled.div`
   margin-right: 4px;
   margin-left: 8px;
@@ -94,11 +96,44 @@ const Rating = styled.div`
   display: flex;
   align-items: center;
 
-  &.fiveStar {
+  >. canChange {
+    margin-right: 8px;
+  }
+
+  &.oneStar {
     color: red;
 
     > .canChange {
       fill: red !important;
+    }
+  }
+  &.twoStar {
+    color: orange;
+
+    > .canChange {
+      fill: orange !important;
+    }
+  }
+  &.threeStar {
+    color: yellow;
+
+    > .canChange {
+      fill: yellow !important;
+    }
+  }
+  &.fourStar {
+    color: green;
+
+    > .canChange {
+      fill: green !important;
+    }
+  }
+
+  &.fiveStar {
+    color: limegreen;
+
+    > .canChange {
+      fill: limegreen !important;
       margin-right: 8px;
     }
   }
