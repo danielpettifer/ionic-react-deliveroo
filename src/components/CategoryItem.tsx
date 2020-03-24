@@ -7,7 +7,7 @@ import {
 import { Category } from '../data/categories';
 import styled from '../../node_modules/styled-components';
 
-interface CatergoryListItemProps {
+interface CategoryListItemProps {
   category: Category;
 }
 
