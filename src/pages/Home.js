@@ -3,7 +3,7 @@ import { IonContent, IonPage } from '@ionic/react';
 import staticdata from '../staticdata.json';
 import DeliverooHeader from '../components/DeliverooHeader/DeliverooHeader';
 import MainSearch from '../components/MainSearch/MainSearch';
-import DeliverooSegmentControl from '../components/DeliverooSegmentControl/DeliverooSegmentControl';
+import MainSegmentControl from '../components/MainSegmentControl/MainSegmentControl';
 import HorizontalCardList from '../components/HorizontalCardList/HorizontalCardList';
 import Notice from '../components/Notice/Notice';
 import Card from '../components/Card/Card';
@@ -17,7 +17,7 @@ export const Home = () => {
     <IonPage ref={pageRef}>
       <IonContent>
         <DeliverooHeader />
-        <DeliverooSegmentControl />
+        <MainSegmentControl />
         <MainSearch pageRef={pageRef} />
         <HorizontalCardList>
           {staticdata.smallCards.map(card => (
