@@ -16,7 +16,7 @@ const restaurants: Restaurant[] = [
   {
     status: 'Open',
     name: 'Rusty Bike',
-    rating:0.6,
+    rating: 4.6,
     ratingCount: 50,
     food: 'Thai, Curry',
     distance: 0.2,
@@ -29,7 +29,7 @@ const restaurants: Restaurant[] = [
   {
     status: 'Open',
     name: 'KFC',
-    rating: 4.2,
+    rating: 3.1,
     ratingCount: 50,
     food: 'Fried Chicken',
     distance: 1.3,
