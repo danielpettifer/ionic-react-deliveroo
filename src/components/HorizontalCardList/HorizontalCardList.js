@@ -2,6 +2,17 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+class HorizontalCardList extends React.Component {
+
+  render() {
+    return (
+      <HorizontalList className="horizontal">
+        {this.props.children}
+      </HorizontalList>
+    )
+  }
+}
+
 const HorizontalList = styled.div`
     display: flex;
     flex-direction: row;
@@ -14,15 +25,5 @@ const HorizontalList = styled.div`
   display: none;
 }
 `
-class HorizontalCardList extends React.Component {
-
-  render() {
-    return (
-      <HorizontalList className="horizontal">
-        {this.props.children}
-      </HorizontalList>
-    )
-  }
-}
 
 export default HorizontalCardList;
