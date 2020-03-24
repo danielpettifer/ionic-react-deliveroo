@@ -1,16 +1,16 @@
 import React from 'react';
 import { IonFab, IonFabButton, IonIcon, IonButton } from '@ionic/react';
 import { personOutline, chevronDown } from 'ionicons/icons';
-import './DeliverooHeader.css';
+import './MainHeader.css';
 
-class DeliverooHeader extends React.Component {
+class MainHeader extends React.Component {
 
   render() {
     return (
       <div className="container" >
         <div className="accountLine ion-padding">
           <div className="row">
-            <div className="riderImg" /> 
+            <div className="riderImg" />
             <div className="deliveryCol">
               <span className="label">
                 Now
@@ -21,15 +21,15 @@ class DeliverooHeader extends React.Component {
               </IonButton>
             </div>
           </div>
-            <IonFab horizontal="end">
-              <IonFabButton size="small" color="light" routerLink="/home/account">
-                <IonIcon icon={personOutline} color="primary" />
-              </IonFabButton>
-            </IonFab>
+          <IonFab horizontal="end">
+            <IonFabButton size="small" color="light" routerLink="/home/account">
+              <IonIcon icon={personOutline} color="primary" />
+            </IonFabButton>
+          </IonFab>
         </div>
-        </div>
+      </div>
     )
   }
 }
 
-export default DeliverooHeader;
+export default MainHeader;
