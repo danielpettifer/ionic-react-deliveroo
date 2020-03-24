@@ -1,12 +1,8 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "deliveroo",
+  "appName": "similaroo",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
-  "cordova": {},
-  "server": {
-    "url": "http://192.168.4.28:8100",
-    "cleartext": true
-  }
+  "cordova": {}
 }
