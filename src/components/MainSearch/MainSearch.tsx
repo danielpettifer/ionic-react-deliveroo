@@ -4,16 +4,16 @@ import { optionsOutline } from 'ionicons/icons';
 import FilterModal from '../../modals/FilterModal';
 import './MainSearch.css';
 
-interface MainSearchPropsPageRef {
-  current: HTMLElement
-}
+// interface MainSearchPropsPageRef {
+//   current: HTMLElement
+// }
 
-interface MainSearchProps {
-  pageRef: MainSearchPropsPageRef;
-}
+// interface MainSearchProps {
+//   pageRef: MainSearchPropsPageRef;
+// }
 
-export const MainSearch = ({ pageRef }: MainSearchProps) => {
-  console.log({ pageRef });
+export const MainSearch = () => {
+  console.log({});
   const [showModal, setShowModal] = useState(false);
 
   async function closeModal() {
@@ -29,7 +29,7 @@ export const MainSearch = ({ pageRef }: MainSearchProps) => {
       <IonModal
         isOpen={showModal}
         swipeToClose={true}
-        presentingElement={pageRef.current}
+        // presentingElement={pageRef.current}
         onDidDismiss={() => setShowModal(false)}
         showBackdrop={true}
       >

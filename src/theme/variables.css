@@ -7,6 +7,34 @@ ion-segment {
   justify-content: flex-start;
 }
 
+.category-list-item {
+  position: relative;
+  min-width: 72px;
+  min-height: 72px;
+  padding:0;
+  margin-right: -8px;
+}
+
+.category-list-item > img {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.category-list-item > .label-bottom {
+  z-index: 2;
+  position: absolute;
+  bottom: 16px;
+  left: 8px;
+}
+
+.label-bottom > h3 {
+  color: #fff;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+
 ion-segment-button {
   --background-checked: transparent;
   --color-checked: white;
