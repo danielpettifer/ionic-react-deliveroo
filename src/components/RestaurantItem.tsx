@@ -6,7 +6,7 @@ import {
 } from '@ionic/react';
 import { Restaurant } from '../data/restaurants';
 import styled from '../../node_modules/styled-components';
-import { star } from 'ionicons/icons';
+import { star, pricetagOutline } from 'ionicons/icons';
 
 interface RestaurantItemProps {
   restaurant: Restaurant;
@@ -72,6 +72,15 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
           </Rating>
           <h3>({restaurant.ratingCount}+) • {restaurant.food}</h3>
         </Row>
+        <Row>
+        <h3>{restaurant.distance} miles away • {restaurant.deliveryCost} delivery</h3>
+        </Row>
+        {restaurant.bundle && 
+        <Row className="orange">
+          <IonIcon icon={pricetagOutline} />
+          £20 family bundles
+        </Row>
+        }
       </IonLabel>
     </IonCard>
   );
@@ -166,6 +175,15 @@ const Rating = styled.div`
 const Row = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 4px;
+
+  &.orange {
+    color: #ffa200;
+    
+    > svg {
+      margin-right: 8px;
+    }
+  }
 `
 
 const DeliveryLabel = styled.div`
