@@ -6,9 +6,13 @@ const HorizontalList = styled.div`
     display: flex;
     flex-direction: row;
     overflow-x: auto;
+    overflow-y: hidden;
     padding: 0;
     padding-right: 32px !important;
-    max-height: 128px;
+
+    &::-webkit-scrollbar {
+  display: none;
+}
 `
 class HorizontalCardList extends React.Component {
 
