@@ -9,8 +9,8 @@ ion-segment {
 
 .category-list-item {
   position: relative;
-  min-width: 72px;
-  min-height: 72px;
+  min-width: 88px;
+  min-height: 88px;
   padding:0;
   margin-right: -8px;
 }

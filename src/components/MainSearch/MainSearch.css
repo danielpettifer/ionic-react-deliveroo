@@ -1,6 +1,7 @@
 .row {
   display: flex;
   flex-direction: row;
+  margin-bottom: -16px;
 }
 
 .row.search-bar {
@@ -8,7 +9,7 @@
   padding-top: 0px;
   padding-bottom: 0;
   position: sticky;
-  top: 110px;
+  top: 106px;
   left: 0;
   background: #fff;
   padding-left: 16px;

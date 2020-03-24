@@ -8,6 +8,7 @@ const HorizontalList = styled.div`
     overflow-x: auto;
     padding: 0;
     padding-right: 32px !important;
+    max-height: 128px;
 `
 class HorizontalCardList extends React.Component {
 
