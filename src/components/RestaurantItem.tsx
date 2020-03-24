@@ -24,9 +24,12 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
         src={restaurant.image}
         alt="restaurant"
       />
+      {restaurant.deliveryCost < 2.5 ? ( 
       <DeliveryLabel>
         £{restaurant.deliveryCost} Delivery
       </DeliveryLabel>
+      ) : (<></>)}
+     
       <TimeLabel>
         {restaurant.deliveryTime}
         <Mins>
