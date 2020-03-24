@@ -22,3 +22,7 @@
     -webkit-padding-start: 40px;
     padding-inline-start: 40px;
   }
+
+  .category-list-item {
+    display: none !important;
+  }
