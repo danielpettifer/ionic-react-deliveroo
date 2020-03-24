@@ -5,15 +5,15 @@ import FilterModal from '../../modals/FilterModal';
 import './DeliverooSearch.css';
 
 interface DeliverooSearchPropsPageRef {
-    current: HTMLElement
+  current: HTMLElement
 }
 
 interface DeliverooSearchProps {
-    pageRef: DeliverooSearchPropsPageRef;
+  pageRef: DeliverooSearchPropsPageRef;
 }
 
-export const DeliverooSearch = ({pageRef}: DeliverooSearchProps) => {
-  console.log({pageRef});
+export const DeliverooSearch = ({ pageRef }: DeliverooSearchProps) => {
+  console.log({ pageRef });
   const [showModal, setShowModal] = useState(false);
 
   async function closeModal() {
@@ -31,6 +31,7 @@ export const DeliverooSearch = ({pageRef}: DeliverooSearchProps) => {
         swipeToClose={true}
         presentingElement={pageRef.current}
         onDidDismiss={() => setShowModal(false)}
+        showBackdrop={true}
       >
         <FilterModal closeAction={closeModal}></FilterModal>
       </IonModal>
