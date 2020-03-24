@@ -20,7 +20,7 @@ const RestaurantListItem: React.FC<RestaurantListItemProps> = ({ restaurant }) =
       <IonLabel>
         <Status>{restaurant.status}</Status>
         <h3>{restaurant.name}</h3>
-        <h3>£{restaurant.total} • {restaurant.datetime}</h3>
+        <h3>£{restaurant.food} • {restaurant.status}</h3>
       </IonLabel>
 
     </IonItem>

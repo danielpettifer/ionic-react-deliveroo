@@ -8,9 +8,13 @@ import HorizontalCardList from '../components/HorizontalCardList/HorizontalCardL
 import Notice from '../components/Notice/Notice';
 import Card from '../components/Card/Card';
 import CategoryListItem from '../components/CategoryItem';
+import RestaurantListItem from '../components/RestaurantListItem';
 import { Category, getCategories } from '../data/categories';
+import { Restaurant, getRestaurants } from '../data/restaurants';
 
 import './Home.css';
+
+
 
 
 const Home: React.FC = () => {
@@ -32,15 +36,15 @@ const Home: React.FC = () => {
         {/* <MainSearch pageRef={pageRef} /> */}
         <MainSearch />
         <HorizontalCardList>
-          {/* {staticdata.smallCards.map(card => (
-            <Card title={card.title} image={card.img} />
-          ))} */}
           {categories.map(m => <CategoryListItem key={m.id} category={m} />)}
         </HorizontalCardList>
         <Notice
           title="Contact-free delivery"
           content="Your rider will knock, place your order at your door and wait nearby to make sure you receive it."
         />
+        <HorizontalCardList>
+          {restaurants.map(m => <RestaurantListItem key={m.id} category={m} />)}
+        </HorizontalCardList>
       </IonContent>
     </IonPage>
   );
