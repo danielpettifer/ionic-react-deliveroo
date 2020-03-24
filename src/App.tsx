@@ -7,6 +7,7 @@ import Account from './pages/Account';
 import Orders from './pages/Orders';
 import OrdersDetail from './pages/OrderDetail';
 import CategoryDetail from './pages/CategoryDetail';
+import RestaurantDetail from './pages/RestaurantDetail';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -37,6 +38,7 @@ const App: React.FC = () => (
         <Route path="/home/account/orders" component={Orders} exact={true} />
         <Route path="/home/account/orders/orderdetail/:id" component={OrdersDetail} exact={true} />
         <Route path="/home/categorydetail/:id" component={CategoryDetail} exact={true} />
+        <Route path="/home/restaurantdetail/:id" component={RestaurantDetail} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/home" />} />
       </IonRouterOutlet>
     </IonReactRouter>

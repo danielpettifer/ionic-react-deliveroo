@@ -8,7 +8,7 @@ import HorizontalCardList from '../components/HorizontalCardList/HorizontalCardL
 import Notice from '../components/Notice/Notice';
 import Card from '../components/Card/Card';
 import CategoryListItem from '../components/CategoryItem';
-import RestaurantListItem from '../components/RestaurantListItem';
+import RestaurantItem from '../components/RestaurantItem';
 import { Category, getCategories } from '../data/categories';
 import { Restaurant, getRestaurants } from '../data/restaurants';
 
@@ -20,10 +20,13 @@ import './Home.css';
 const Home: React.FC = () => {
   // const pageRef = useRef;
   const [categories, setCategories] = useState<Category[]>([]);
+  const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
 
   useIonViewWillEnter(() => {
     const ctgrs = getCategories();
     setCategories(ctgrs);
+    const rstrnts = getRestaurants();
+    setRestaurants(rstrnts);
   }
   )
 
@@ -43,7 +46,7 @@ const Home: React.FC = () => {
           content="Your rider will knock, place your order at your door and wait nearby to make sure you receive it."
         />
         <HorizontalCardList>
-          {restaurants.map(m => <RestaurantListItem key={m.id} category={m} />)}
+          {restaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
         </HorizontalCardList>
       </IonContent>
     </IonPage>
