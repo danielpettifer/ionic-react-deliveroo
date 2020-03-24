@@ -37,7 +37,11 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
         <Name>{restaurant.name}</Name>
         <Row>
           <Rating
-            className={`${restaurant.rating > 0 ? "oneStar" : null} ${restaurant.rating > 1 ? "twoStar" : null} ${restaurant.rating > 2 ? "threeStar" : null} ${restaurant.rating > 3 ? "fourStar" : null} ${restaurant.rating > 4 ? "fiveStar" : null}`}
+            className={`${restaurant.rating > 0 ? "oneStar" : null}
+             ${restaurant.rating > 1 ? "twoStar" : null}
+              ${restaurant.rating > 2 ? "threeStar" : null} 
+               ${restaurant.rating > 3 ? "fourStar" : null}
+                 ${restaurant.rating > 4 ? "fiveStar" : null}`}
           >
             <IonIcon
               className="canChange"
@@ -47,7 +51,20 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
             />
             {restaurant.rating}
             <RatingLabel>
-              Excellent
+              {restaurant.rating < 1 ? (
+                <>Terrible</>
+              ) : restaurant.rating < 2 ? (
+                <>Average</>
+              ) : restaurant.rating < 3 ? (
+                <>Ok</>
+              ) : restaurant.rating < 4 ?(
+                <>Good</>
+              ) : restaurant.rating < 4.5 ? (
+                <>Very good</>
+              ) : (
+                <>Excellent</>
+              )
+            }
             </RatingLabel>
           </Rating>
           <h3>({restaurant.ratingCount}+) • {restaurant.food}</h3>
@@ -105,6 +122,7 @@ const Rating = styled.div`
 
     > .canChange {
       fill: red !important;
+      margin-right: 8px;
     }
   }
   &.twoStar {
@@ -112,6 +130,7 @@ const Rating = styled.div`
 
     > .canChange {
       fill: orange !important;
+      margin-right: 8px;
     }
   }
   &.threeStar {
@@ -119,6 +138,7 @@ const Rating = styled.div`
 
     > .canChange {
       fill: yellow !important;
+      margin-right: 8px;
     }
   }
   &.fourStar {
@@ -126,6 +146,7 @@ const Rating = styled.div`
 
     > .canChange {
       fill: green !important;
+      margin-right: 8px;
     }
   }
 
