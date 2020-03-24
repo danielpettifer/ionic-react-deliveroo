@@ -37,7 +37,11 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
         <Name>{restaurant.name}</Name>
         <Row>
           <Rating
-            className={`${restaurant.rating > 0 ? "oneStar" : null} ${restaurant.rating > 1 ? "twoStar" : null} ${restaurant.rating > 2 ? "threeStar" : null} ${restaurant.rating > 3 ? "fourStar" : null} ${restaurant.rating > 4 ? "fiveStar" : null}`}
+            className={`${restaurant.rating > 0 ? "oneStar" : null}
+             ${restaurant.rating > 1 ? "twoStar" : null}
+              ${restaurant.rating > 2 ? "threeStar" : null} 
+               ${restaurant.rating > 3 ? "fourStar" : null}
+                 ${restaurant.rating > 4 ? "fiveStar" : null}`}
           >
             <IonIcon
               className="canChange"
