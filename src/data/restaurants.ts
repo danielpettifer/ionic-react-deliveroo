@@ -1,6 +1,8 @@
 export interface Restaurant {
   status: string;
   name: string;
+  rating: number;
+  ratingCount: number;
   food: string;
   distance: number;
   deliveryCost: number;
@@ -14,6 +16,8 @@ const restaurants: Restaurant[] = [
   {
     status: 'Open',
     name: 'Rusty Bike',
+    rating: 1.6,
+    ratingCount: 50,
     food: 'Thai, Curry',
     distance: 0.2,
     deliveryCost: 1.49,
@@ -25,6 +29,8 @@ const restaurants: Restaurant[] = [
   {
     status: 'Open',
     name: 'KFC',
+    rating: 4.2,
+    ratingCount: 50,
     food: 'Fried Chicken',
     distance: 1.3,
     deliveryCost: 3.12,
