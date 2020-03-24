@@ -29,8 +29,8 @@ const restaurants: Restaurant[] = [
   {
     status: 'Open',
     name: 'KFC',
-    rating: 3.1,
-    ratingCount: 50,
+    rating: 0.1,
+    ratingCount: 710,
     food: 'Fried Chicken',
     distance: 1.3,
     deliveryCost: 3.12,
