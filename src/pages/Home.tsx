@@ -7,11 +7,11 @@ import MainSegmentControl from '../components/MainSegmentControl/MainSegmentCont
 import HorizontalCardList from '../components/HorizontalCardList/HorizontalCardList';
 import Notice from '../components/Notice/Notice';
 import Card from '../components/Card/Card';
-
+import CategoryListItem from '../components/CategoryItem';
 import { Category, getCategories } from '../data/categories';
 
 import './Home.css';
-import CategoryListItem from '../components/CategoryItem';
+
 
 const Home: React.FC = () => {
   // const pageRef = useRef;
