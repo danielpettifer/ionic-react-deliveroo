@@ -6,13 +6,15 @@ import {
     IonHeader,
     IonToolbar,
     IonButtons,
+    IonButton,
     IonBackButton,
     IonTitle,
-    useIonViewWillEnter
+    useIonViewWillEnter,
+    IonIcon
 } from '@ionic/react';
 import { RouteComponentProps } from 'react-router';
 import styled from '../../node_modules/styled-components';
-import { arrowBack } from 'ionicons/icons';
+import { arrowBack, shareOutline, search } from 'ionicons/icons';
 interface ViewRestaurantProps extends RouteComponentProps<{ id: string; }> { }
 
 const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
@@ -30,6 +32,14 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
                 <IonToolbar className="start-opacity-zero">
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/" text="" icon={arrowBack} />
+                    </IonButtons>
+                    <IonButtons slot="end">
+                        <IonButton className="top-button" shape="round">
+                            <IonIcon icon={shareOutline} />
+                        </IonButton>
+                        <IonButton className="top-button" shape="round">
+                            <IonIcon icon={search} />
+                        </IonButton>
                     </IonButtons>
                     <IonTitle>
                         {restaurant ? (<>{restaurant.name}</>) : <>Unkown</>}
