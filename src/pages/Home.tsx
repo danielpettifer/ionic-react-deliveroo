@@ -25,6 +25,14 @@ const Home: React.FC = () => {
     }
   );
 
+  const sortedRestaurants = restaurants.sort( (a, b) => {
+    if (a.rating < b.rating)
+      return 1;
+    else
+      return -1;
+  });
+  console.log({sortedRestaurants});
+
   return (
     <IonPage ref={homePage}>
       <IonContent>
@@ -40,15 +48,15 @@ const Home: React.FC = () => {
         />
         <SectionHeader>New on Similaroo</SectionHeader>
         <HorizontalCardList>
-          {restaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
+          {sortedRestaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
         </HorizontalCardList>
         <SectionHeader>Highest rated</SectionHeader>
         <HorizontalCardList>
-          {restaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
+          {sortedRestaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
         </HorizontalCardList>
         <SectionHeader>Closest restaurants</SectionHeader>
         <HorizontalCardList>
-          {restaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
+          {sortedRestaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
         </HorizontalCardList>
       </IonContent>
     </IonPage>
