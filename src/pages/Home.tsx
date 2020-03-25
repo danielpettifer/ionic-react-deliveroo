@@ -9,8 +9,8 @@ import CategoryListItem from '../components/CategoryItem';
 import RestaurantItem from '../components/RestaurantItem';
 import { Category, getCategories } from '../data/categories';
 import { Restaurant, getRestaurants } from '../data/restaurants';
-
 import './Home.css';
+import styled from '../../node_modules/styled-components';
 
 const Home: React.FC = () => {
   // const pageRef = useRef;
@@ -40,6 +40,7 @@ const Home: React.FC = () => {
           title="Contact-free delivery"
           content="Your rider will knock, place your order at your door and wait nearby to make sure you receive it."
         />
+        <SectionHeader>New on Similaroo</SectionHeader>
         <HorizontalCardList>
           {restaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
         </HorizontalCardList>
@@ -47,5 +48,12 @@ const Home: React.FC = () => {
     </IonPage>
   );
 };
+
+const SectionHeader = styled.div`
+  font-weight: 800;
+  font-size: 14px;
+  color: black;
+  padding: 16px 0 0 16px;
+`
 
 export default Home;
