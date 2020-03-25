@@ -2,11 +2,32 @@
 http://ionicframework.com/docs/theming/ */
 
 /** custom variables **/
+ion-back-button {
+  --background: white;
+  --border-radius: 50%;
+  --min-width: 40px;
+  --min-height: 40px;
+  --icon-font-size: 24px;
+}
+
+.start-opacity-zero {
+  --ion-toolbar-background:white ;
+}
+
 .header-large {
-  background: red !important;
-  min-height: 225px;
-  margin-top: -90px;
- 
+  max-height: 205px;
+  position: relative;
+  padding: 0!important;
+  margin-top: 130px;
+}
+
+.transparent {
+  background: transparent !important;
+  color: transparent !important;
+  padding: 0 !important;
+}
+.no-scroll {
+  --overflow: hidden;
 }
 
 .header-large > .bottom {
