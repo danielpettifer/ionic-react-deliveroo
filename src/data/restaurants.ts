@@ -32,9 +32,22 @@ const restaurants: Restaurant[] = [
     rating: 0.1,
     ratingCount: 710,
     food: 'Fried Chicken',
-    distance: 1.3,
+    distance: 0.1,
     deliveryCost: 3.12,
     deliveryTime: '30-40',
+    bundle: false,
+    image: 'https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg',
+    id: 1
+  },
+  {
+    status: 'Open',
+    name: 'McDonalds',
+    rating: 3.2,
+    ratingCount: 230,
+    food: 'Burgers, Fast food',
+    distance: 0.3,
+    deliveryCost: 1.12,
+    deliveryTime: '10-15',
     bundle: false,
     image: 'https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg',
     id: 1

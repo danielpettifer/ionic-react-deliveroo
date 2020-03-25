@@ -18,15 +18,21 @@ const Home: React.FC = () => {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
 
   useIonViewWillEnter(() => {
-      const ctgrs = getCategories();
-      setCategories(ctgrs);
-      const rstrnts = getRestaurants();
-      setRestaurants(rstrnts);
-    }
+    const ctgrs = getCategories();
+    setCategories(ctgrs);
+    const rstrnts = getRestaurants();
+    setRestaurants(rstrnts);
+  }
   );
 
-  const sortedRestaurants = restaurants.sort( (a, b) => {
+  const sortedRestaurantsByRating = restaurants.sort((a, b) => {
     if (a.rating < b.rating)
+      return 1;
+    else
+      return -1;
+  });
+  const sortedRestaurantsByDistance = restaurants.sort((c, d) => {
+    if (c.distance > d.distance)
       return 1;
     else
       return -1;
@@ -47,15 +53,15 @@ const Home: React.FC = () => {
         />
         <SectionHeader>New on Similaroo</SectionHeader>
         <HorizontalCardList>
-          {sortedRestaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
+          {restaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
         </HorizontalCardList>
         <SectionHeader>Highest rated</SectionHeader>
         <HorizontalCardList>
-          {sortedRestaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
+          {sortedRestaurantsByRating.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
         </HorizontalCardList>
         <SectionHeader>Closest restaurants</SectionHeader>
         <HorizontalCardList>
-          {sortedRestaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
+          {sortedRestaurantsByDistance.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
         </HorizontalCardList>
       </IonContent>
     </IonPage>
