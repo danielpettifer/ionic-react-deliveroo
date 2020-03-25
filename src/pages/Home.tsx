@@ -29,7 +29,7 @@ const Home: React.FC = () => {
     return a.rating < b.rating ? 1 : -1;
   };
   const byDistance = (a: Restaurant, b: Restaurant) => {
-    return a.distance < b.distance ? 1 : -1;
+    return a.distance > b.distance ? 1 : -1;
   };
 
   return (
