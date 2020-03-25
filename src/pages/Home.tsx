@@ -13,26 +13,24 @@ import './Home.css';
 import styled from '../../node_modules/styled-components';
 
 const Home: React.FC = () => {
-  // const pageRef = useRef;
+  const homePage = useRef(undefined);
   const [categories, setCategories] = useState<Category[]>([]);
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
 
   useIonViewWillEnter(() => {
-    const ctgrs = getCategories();
-    setCategories(ctgrs);
-    const rstrnts = getRestaurants();
-    setRestaurants(rstrnts);
-  }
-  )
+      const ctgrs = getCategories();
+      setCategories(ctgrs);
+      const rstrnts = getRestaurants();
+      setRestaurants(rstrnts);
+    }
+  );
 
   return (
-    // <IonPage ref={pageRef}>
-    <IonPage>
+    <IonPage ref={homePage}>
       <IonContent>
         <MainHeader />
         <MainSegmentControl />
-        {/* <MainSearch pageRef={pageRef} /> */}
-        <MainSearch />
+        <MainSearch homePageRef={homePage.current} />
         <HorizontalCardList>
           {categories.map(m => <CategoryListItem key={m.id} category={m} />)}
         </HorizontalCardList>
@@ -63,5 +61,6 @@ const SectionHeader = styled.div`
   color: black;
   padding: 24px 0 0 16px;
   margin-bottom: -8px;
-`
+`;
+
 export default Home;
