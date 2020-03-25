@@ -18,12 +18,19 @@ const Home: React.FC = () => {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
 
   useIonViewWillEnter(() => {
-      const ctgrs = getCategories();
-      setCategories(ctgrs);
-      const rstrnts = getRestaurants();
-      setRestaurants(rstrnts);
-    }
+    const ctgrs = getCategories();
+    setCategories(ctgrs);
+    const rstrnts = getRestaurants();
+    setRestaurants(rstrnts);
+  }
   );
+
+  const byRating = (a: Restaurant, b: Restaurant) => {
+    return a.rating < b.rating ? 1 : -1;
+  };
+  const byDistance = (a: Restaurant, b: Restaurant) => {
+    return a.distance > b.distance ? 1 : -1;
+  };
 
   return (
     <IonPage ref={homePage}>
@@ -44,11 +51,11 @@ const Home: React.FC = () => {
         </HorizontalCardList>
         <SectionHeader>Highest rated</SectionHeader>
         <HorizontalCardList>
-          {restaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
+          {restaurants.sort(byRating).map(m => <RestaurantItem key={m.id} restaurant={m} />)}
         </HorizontalCardList>
         <SectionHeader>Closest restaurants</SectionHeader>
         <HorizontalCardList>
-          {restaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
+          {restaurants.sort(byDistance).map(m => <RestaurantItem key={m.id} restaurant={m} />)}
         </HorizontalCardList>
       </IonContent>
     </IonPage>
