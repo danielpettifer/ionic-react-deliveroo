@@ -51,16 +51,40 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
                     </IonTitle>
                 </IonToolbar>
             </IonHeader>
-            <IonContent color="light">
-                {restaurant ? (
-                    <>
-                        {restaurant.name}
-                    </>
+            <IonContent fullscreen>
+                <IonHeader collapse="condense" className="header-large">
+                    <IonToolbar className="bottom">
+                        <IonTitle>
+                            {restaurant ? (<>{restaurant.name}</>) : <></>}
+                        </IonTitle>
+                    </IonToolbar>
+                </IonHeader>
 
-                ) : <div>No categories</div>}
+
+                <h1>rofffw</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1>
+                <h1>row</h1> <h1>row</h1>
+
 
             </IonContent>
-        </IonPage>
+        </IonPage >
     );
 };
 

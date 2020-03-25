@@ -1,3 +1,7 @@
+.header-large {
+  background: red !important;
+}
+
 .align-left {
     padding-left: 40px;
     -webkit-padding-start: 40px;
