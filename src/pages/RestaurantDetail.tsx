@@ -111,7 +111,7 @@ const ContentWrapper = styled.div`
 `
 
 const HeaderImage = styled.div`
-
+animation: fadeIn .5s ;
 position: fixed;
 top: 0;
 left: 0;
