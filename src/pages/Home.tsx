@@ -44,6 +44,14 @@ const Home: React.FC = () => {
         <HorizontalCardList>
           {restaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
         </HorizontalCardList>
+        <SectionHeader>Highest rated</SectionHeader>
+        <HorizontalCardList>
+          {restaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
+        </HorizontalCardList>
+        <SectionHeader>Closest restaurants</SectionHeader>
+        <HorizontalCardList>
+          {restaurants.map(m => <RestaurantItem key={m.id} restaurant={m} />)}
+        </HorizontalCardList>
       </IonContent>
     </IonPage>
   );
@@ -53,7 +61,7 @@ const SectionHeader = styled.div`
   font-weight: 800;
   font-size: 14px;
   color: black;
-  padding: 16px 0 0 16px;
+  padding: 24px 0 0 16px;
+  margin-bottom: -8px;
 `
-
 export default Home;
