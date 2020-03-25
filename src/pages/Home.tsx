@@ -31,7 +31,6 @@ const Home: React.FC = () => {
     else
       return -1;
   });
-  console.log({sortedRestaurants});
 
   return (
     <IonPage ref={homePage}>
