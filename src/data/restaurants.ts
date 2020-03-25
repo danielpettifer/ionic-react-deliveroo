@@ -14,6 +14,7 @@ export interface Restaurant {
 
 const restaurants: Restaurant[] = [
   {
+    id: 0,
     status: 'Open',
     name: 'Rusty Bike',
     rating: 4.6,
@@ -23,10 +24,10 @@ const restaurants: Restaurant[] = [
     deliveryCost: 1.49,
     deliveryTime: '15-20',
     bundle: true,
-    image: 'https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg',
-    id: 0
+    image: 'https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg'
   },
   {
+    id: 1,
     status: 'Open',
     name: 'KFC',
     rating: 0.1,
@@ -36,10 +37,10 @@ const restaurants: Restaurant[] = [
     deliveryCost: 3.12,
     deliveryTime: '30-40',
     bundle: false,
-    image: 'https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg',
-    id: 1
+    image: 'https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg'
   },
   {
+    id: 2,
     status: 'Open',
     name: 'McDonalds',
     rating: 3.2,
@@ -49,8 +50,7 @@ const restaurants: Restaurant[] = [
     deliveryCost: 1.12,
     deliveryTime: '10-15',
     bundle: false,
-    image: 'https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg',
-    id: 1
+    image: 'https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/ramen_2-1080x1080.jpg'
   }
 ];
 
