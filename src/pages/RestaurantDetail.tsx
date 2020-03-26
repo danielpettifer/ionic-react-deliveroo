@@ -15,6 +15,8 @@ import {
 import { RouteComponentProps } from 'react-router';
 import styled from '../../node_modules/styled-components';
 import { arrowBack, shareOutline, search } from 'ionicons/icons';
+import Rating from '../components/Rating';
+import Location from '../components/Location';
 interface ViewRestaurantProps extends RouteComponentProps<{ id: string; }> { }
 
 const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
@@ -66,25 +68,31 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
                     <ContentHeader>
                         {restaurant ? (<>{restaurant.name}</>) : <>Unkown</>}
                     </ContentHeader>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
+                    {restaurant ? (<>
+                        <Rating
+                            rating={restaurant.rating}
+                            ratingCount={restaurant.ratingCount}
+                            food={restaurant.food}
+                        />
+                        <h1>row</h1>
+                        <h1>row</h1>
+                        <h1>row</h1>
+                        <h1>row</h1>
+                        <h1>row</h1>
+                        <h1>row</h1>
+                        <h1>row</h1>
+                        <h1>row</h1>
 
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
+                        <h1>row</h1>
+                        <h1>row</h1>
+                        <h1>row</h1>
+                        <h1>row</h1>
+                        <h1>row</h1>
+                        <h1>row</h1>
+                        <h1>row</h1>
+                        <h1>row</h1>
+                        <h1>row</h1>
+                    </>) : (null)}
                 </ContentWrapper>
 
 
