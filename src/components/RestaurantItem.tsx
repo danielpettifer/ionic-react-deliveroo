@@ -8,6 +8,7 @@ import { Restaurant } from '../data/restaurants';
 import styled from '../../node_modules/styled-components';
 import { pricetagOutline } from 'ionicons/icons';
 import Rating from './Rating';
+import Location from './Location';
 
 interface RestaurantItemProps {
   restaurant: Restaurant;
@@ -45,10 +46,10 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
           ratingCount={restaurant.ratingCount}
           food={restaurant.food}
         />
-
-        <Row>
-          <h3>{restaurant.distance} miles away • £{restaurant.deliveryCost} delivery</h3>
-        </Row>
+        <Location
+          distance={restaurant.distance}
+          deliveryCost={restaurant.deliveryCost}
+        />
         {restaurant.bundle &&
           <Row className="orange">
             <IonIcon icon={pricetagOutline} />
