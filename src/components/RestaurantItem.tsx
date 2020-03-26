@@ -1,14 +1,14 @@
 import React from 'react';
 import {
   IonCard,
-  IonLabel,
-  IonIcon
+  IonLabel
 } from '@ionic/react';
 import { Restaurant } from '../data/restaurants';
 import styled from '../../node_modules/styled-components';
-import { pricetagOutline } from 'ionicons/icons';
 import Rating from './Rating';
 import Location from './Location';
+import Bundle from './Bundle';
+import TimeBadge from './TimeBadge';
 
 interface RestaurantItemProps {
   restaurant: Restaurant;
@@ -31,16 +31,10 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
           £{restaurant.deliveryCost} Delivery
       </DeliveryLabel>
       ) : (<></>)}
+      <TimeBadge deliveryTime={restaurant.deliveryTime} />
 
-      <TimeLabel>
-        {restaurant.deliveryTime}
-        <Mins>
-          min
-        </Mins>
-      </TimeLabel>
       <IonLabel>
         <Name>{restaurant.name}</Name>
-
         <Rating
           rating={restaurant.rating}
           ratingCount={restaurant.ratingCount}
@@ -50,38 +44,13 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
           distance={restaurant.distance}
           deliveryCost={restaurant.deliveryCost}
         />
-        {restaurant.bundle &&
-          <Row className="orange">
-            <IonIcon icon={pricetagOutline} />
-            £20 family bundles
-        </Row>
-        }
+        <Bundle bundle={restaurant.bundle} />
       </IonLabel>
     </IonCard>
   );
 };
 
-const TimeLabel = styled.div`
-  position: absolute;
-  top: 115px;
-  right: 16px;
-  display; flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  background: #fff;
-  color: #000;
-  font-weight: 800;
-  padding: 6px 24px;
-  border-radius: 30px;
-  box-shadow: 0 3px 10px 5px rgba(0,0,0,0.1);
-`
-const Mins = styled.div`
-color: red;
-text-align: center;
-font-weight: 400;
-color: var(--ion-color-medium)
-`
+
 
 const Name = styled.div`
   font-size: 14px;
@@ -89,20 +58,6 @@ const Name = styled.div`
   margin-top: 12px;
   color: black;
   margin-bottom: 4px;
-`
-
-const Row = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 4px;
-
-  &.orange {
-    color: #ffa200;
-    
-    > svg {
-      margin-right: 8px;
-    }
-  }
 `
 
 const DeliveryLabel = styled.div`
