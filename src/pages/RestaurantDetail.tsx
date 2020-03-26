@@ -15,16 +15,27 @@ import {
 import { RouteComponentProps } from 'react-router';
 import styled from '../../node_modules/styled-components';
 import { arrowBack, shareOutline, search } from 'ionicons/icons';
+import { ScrollDetail } from '@ionic/core';
+
 interface ViewRestaurantProps extends RouteComponentProps<{ id: string; }> { }
 
 const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
-
+    const [height, setHeight] = useState(0);
     const [restaurant, setRestaurant] = useState<Restaurant>();
 
     useIonViewWillEnter(() => {
         const rstrnt = getRestaurant(parseInt(match.params.id, 10));
         setRestaurant(rstrnt);
     });
+
+    const onScroll = (e: CustomEvent<ScrollDetail>) => {
+        setHeight(e.detail.scrollTop);
+    };
+
+    let imageSize = 100;
+    if ( height < 100 ) {
+        imageSize = 100 - height;
+    }
 
     return (
         <IonPage>
@@ -47,7 +58,11 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
                 </IonToolbar>
             </IonHeader>
 
-            <IonContent fullscreen>
+            <IonContent
+                fullscreen
+                onIonScroll={onScroll}
+                scrollEvents={true}
+            >
                 <IonHeader collapse="condense" className="header-large" no-border>
                     <IonToolbar className="bottom" color="transparent" >
 
@@ -59,7 +74,7 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
                 </IonHeader>
                 <HeaderImage>
                     {restaurant ? (
-                        <><img src={restaurant.image} /></>
+                        <><img src={restaurant.image} style={{width: `${imageSize}%`}} /></>
                     ) : (<></>)}
                 </HeaderImage>
                 <ContentWrapper>
