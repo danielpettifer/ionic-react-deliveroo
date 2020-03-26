@@ -32,11 +32,9 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
         setHeight(e.detail.scrollTop);
     };
 
-    let imageSize = 1;
-    if (height < 100) {
-        imageSize = 1 - (height / 1000);
-    } else {
-        imageSize = 1
+    let imageScale = 1;
+    if (height < 0) {
+        imageScale = 1 - (height / 1000);
     }
 
     return (
@@ -74,9 +72,9 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
                     </IonToolbar>
 
                 </IonHeader>
-                <HeaderImage style={{ transform: `scale(${imageSize})` }}>
+                <HeaderImage style={{ transform: `scale(${imageScale})` }}>
                     {restaurant ? (
-                        <><img src={restaurant.image} /></>
+                        <><img alt="Restaurant" src={restaurant.image} /></>
                     ) : (<></>)}
                 </HeaderImage>
                 <ContentWrapper>
