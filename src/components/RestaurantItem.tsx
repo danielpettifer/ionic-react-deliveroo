@@ -39,10 +39,13 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
       </TimeLabel>
       <IonLabel>
         <Name>{restaurant.name}</Name>
-        <Row>
-          <Rating rating={restaurant.rating} />
-          <h3>({restaurant.ratingCount}+) • {restaurant.food}</h3>
-        </Row>
+
+        <Rating
+          rating={restaurant.rating}
+          ratingCount={restaurant.ratingCount}
+          food={restaurant.food}
+        />
+
         <Row>
           <h3>{restaurant.distance} miles away • £{restaurant.deliveryCost} delivery</h3>
         </Row>
