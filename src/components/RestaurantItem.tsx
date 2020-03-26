@@ -9,6 +9,7 @@ import Rating from './Rating';
 import Location from './Location';
 import Bundle from './Bundle';
 import TimeBadge from './TimeBadge';
+import Promo from './Promo';
 
 interface RestaurantItemProps {
   restaurant: Restaurant;
@@ -21,18 +22,15 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
       className="card-width-large"
       routerLink={`/home/restaurantdetail/${restaurant.id}`}
     >
+
       <img
         className="card-image-wide"
         src={restaurant.image}
         alt="restaurant"
       />
-      {restaurant.deliveryCost < 2.5 ? (
-        <DeliveryLabel>
-          £{restaurant.deliveryCost} Delivery
-      </DeliveryLabel>
-      ) : (<></>)}
-      <TimeBadge deliveryTime={restaurant.deliveryTime} />
 
+      <Promo deliveryCost={restaurant.deliveryCost} />
+      <TimeBadge deliveryTime={restaurant.deliveryTime} />
       <IonLabel>
         <Name>{restaurant.name}</Name>
         <Rating
@@ -60,15 +58,5 @@ const Name = styled.div`
   margin-bottom: 4px;
 `
 
-const DeliveryLabel = styled.div`
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  display: block;
-  background: #fff;
-  font-weight: 600;
-  padding: 2px 8px;
-  border-radius: 4px;
-`
 
 export default RestaurantItem;
