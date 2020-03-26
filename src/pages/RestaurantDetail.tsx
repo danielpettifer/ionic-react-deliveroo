@@ -15,16 +15,27 @@ import {
 import { RouteComponentProps } from 'react-router';
 import styled from '../../node_modules/styled-components';
 import { arrowBack, shareOutline, search } from 'ionicons/icons';
+import { ScrollDetail } from '@ionic/core';
+
 interface ViewRestaurantProps extends RouteComponentProps<{ id: string; }> { }
 
 const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
-
+    const [height, setHeight] = useState(0);
     const [restaurant, setRestaurant] = useState<Restaurant>();
 
     useIonViewWillEnter(() => {
         const rstrnt = getRestaurant(parseInt(match.params.id, 10));
         setRestaurant(rstrnt);
     });
+
+    const onScroll = (e: CustomEvent<ScrollDetail>) => {
+        setHeight(e.detail.scrollTop);
+    };
+
+    let imageScale = 1;
+    if (height < 0) {
+        imageScale = 1 - (height / 1000);
+    }
 
     return (
         <IonPage>
@@ -47,7 +58,11 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
                 </IonToolbar>
             </IonHeader>
 
-            <IonContent fullscreen>
+            <IonContent
+                fullscreen
+                onIonScroll={onScroll}
+                scrollEvents={true}
+            >
                 <IonHeader collapse="condense" className="header-large" no-border>
                     <IonToolbar className="bottom" color="transparent" >
 
@@ -57,9 +72,9 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
                     </IonToolbar>
 
                 </IonHeader>
-                <HeaderImage>
+                <HeaderImage style={{ transform: `scale(${imageScale})` }}>
                     {restaurant ? (
-                        <><img src={restaurant.image} /></>
+                        <><img alt="Restaurant" src={restaurant.image} /></>
                     ) : (<></>)}
                 </HeaderImage>
                 <ContentWrapper>
@@ -111,14 +126,15 @@ const ContentWrapper = styled.div`
 `
 
 const HeaderImage = styled.div`
-animation: fadeIn .5s ;
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-min-height: 150px;
-display:block;
-z-index: 0;
+    animation: fadeIn .5s ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 150px;
+    display:block;
+    z-index: 0;
+    transform:scale(1);
 `
 
 export default RestaurantDetail;
