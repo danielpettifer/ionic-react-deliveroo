@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Restaurant, getRestaurant } from '../data/restaurants';
 import {
     IonContent,
@@ -22,6 +22,7 @@ import LocationMap from '../components/LocationMap';
 interface ViewRestaurantProps extends RouteComponentProps<{ id: string; }> { }
 
 const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
+    const restaurantRef = useRef(undefined);
     const [height, setHeight] = useState(0);
     const [restaurant, setRestaurant] = useState<Restaurant>();
 
@@ -91,7 +92,9 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
                                 ratingCount={restaurant.ratingCount}
                                 food={restaurant.food}
                             />
-                            <LocationMap address={restaurant.address} />
+                            <LocationMap
+                                restaurantRef={restaurantRef.current}
+                            />
                         </ContentSubHeader>
                         <SpaceLarge />
                     </ContentWrapper>) : null}

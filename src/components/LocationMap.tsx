@@ -1,18 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { IonIcon } from '@ionic/react';
+import { IonIcon, IonModal, IonButton } from '@ionic/react';
 import { locationOutline } from 'ionicons/icons';
+import FilterModal from '../modals/FilterModal';
 
 interface LocationProps {
-  address: string
+  restaurantRef: HTMLElement | undefined;
 }
 
-const LocationMap: React.FC<LocationProps> = ({ address }) => (
-  <Row>
-    <IonIcon icon={locationOutline} />
-    <Label>{address}</Label>
-  </Row>
-);
+export const LocationMap = ({ restaurantRef }: LocationProps) => {
+  const [showModal, setShowModal] = useState(false);
+
+  async function closeModal() {
+    await setShowModal(false);
+  }
+
+  return (
+    <Row>
+      <IonIcon icon={locationOutline} />
+      <Label>address</Label>
+      <IonButton
+        fill="clear"
+        color="primary"
+        onClick={() => setShowModal(true)}
+      >
+        map
+      </IonButton>
+      <IonModal
+        isOpen={showModal}
+        swipeToClose={true}
+        presentingElement={restaurantRef}
+        onDidDismiss={() => setShowModal(false)}
+        showBackdrop={true}
+      >
+        <FilterModal closeAction={closeModal} />
+      </IonModal>
+    </Row>
+  )
+};
 
 const Row = styled.div`
   display: flex;
