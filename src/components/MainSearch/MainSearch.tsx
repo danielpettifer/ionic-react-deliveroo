@@ -5,10 +5,10 @@ import FilterModal from '../../modals/FilterModal';
 import './MainSearch.css';
 
 interface MainSearchProps {
-    homePageRef: HTMLElement|undefined;
+  homePageRef: HTMLElement | undefined;
 }
 
-export const MainSearch = ({homePageRef}: MainSearchProps) => {
+export const MainSearch = ({ homePageRef }: MainSearchProps) => {
   const [showModal, setShowModal] = useState(false);
 
   async function closeModal() {

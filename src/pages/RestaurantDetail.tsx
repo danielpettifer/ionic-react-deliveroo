@@ -41,7 +41,7 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
     }
 
     return (
-        <IonPage>
+        <IonPage ref={restaurantRef}>
             <IonHeader>
                 <IonToolbar className="start-opacity-zero">
                     <IonButtons slot="start">
