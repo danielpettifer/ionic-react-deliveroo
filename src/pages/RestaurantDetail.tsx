@@ -16,6 +16,8 @@ import { RouteComponentProps } from 'react-router';
 import styled from '../../node_modules/styled-components';
 import { arrowBack, shareOutline, search } from 'ionicons/icons';
 import { ScrollDetail } from '@ionic/core';
+import Rating from '../components/Rating';
+import LocationMap from '../components/LocationMap';
 
 interface ViewRestaurantProps extends RouteComponentProps<{ id: string; }> { }
 
@@ -77,30 +79,22 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
                         <><img alt="Restaurant" src={restaurant.image} /></>
                     ) : (<></>)}
                 </HeaderImage>
-                <ContentWrapper>
-                    <ContentHeader>
-                        {restaurant ? (<>{restaurant.name}</>) : <>Unkown</>}
-                    </ContentHeader>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
 
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                </ContentWrapper>
+                {restaurant ? (
+                    <ContentWrapper>
+                        <ContentHeader>
+                            {restaurant.name}
+                        </ContentHeader>
+                        <ContentSubHeader>
+                            <Rating
+                                rating={restaurant.rating}
+                                ratingCount={restaurant.ratingCount}
+                                food={restaurant.food}
+                            />
+                            <LocationMap address={restaurant.address} />
+                        </ContentSubHeader>
+                        <SpaceLarge />
+                    </ContentWrapper>) : null}
 
 
             </IonContent>
@@ -109,20 +103,30 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
     );
 };
 
+const SpaceLarge = styled.div`
+    height: 1000px;
+`
+
 const ContentHeader = styled.div`
     font-size:20px;
     color:#000;
     font-weight: 800;
-    padding: 16px 16px 32px;
+    padding: 16px 16px 0;
     background: white;
     position: relative;
     top: -34px;
+    margin-bottom: -32px;
+`
+
+const ContentSubHeader = styled.div`
+    padding: 16px;
 `
 
 const ContentWrapper = styled.div`
     z-index: 9999999999;
     position: relative;
     background: white;
+    font-size: 14px;
 `
 
 const HeaderImage = styled.div`

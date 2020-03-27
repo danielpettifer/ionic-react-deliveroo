@@ -3,41 +3,45 @@ import styled from 'styled-components';
 import { IonIcon } from '@ionic/react';
 import { star } from 'ionicons/icons';
 const Rating = props => (
-    <Row>
-        <RatingContainer
-            className={`${props.rating > 0 ? "oneStar" : null}
+  <Row>
+    <RatingContainer
+      className={`${props.rating > 0 ? "oneStar" : null}
              ${props.rating > 1 ? "twoStar" : null}
               ${props.rating > 2 ? "threeStar" : null} 
                ${props.rating > 3 ? "fourStar" : null}
                  ${props.rating > 4 ? "fiveStar" : null}`}
-        >
-            <IonIcon
-                className="canChange"
-                icon={star}
-                color="primary"
-                size="small"
-            />
-            {props.rating}
-            <RatingLabel>
-                {props.rating < 1 ? (
-                    <>Terrible</>
-                ) : props.rating < 2 ? (
-                    <>Average</>
-                ) : props.rating < 3 ? (
-                    <>Ok</>
-                ) : props.rating < 4 ? (
-                    <>Good</>
-                ) : props.rating < 4.5 ? (
-                    <>Very good</>
-                ) : (
-                                        <>Excellent</>
-                                    )
-                }
-            </RatingLabel>
-        </RatingContainer>
-        <h3>({props.ratingCount}+) • {props.food}</h3>
-    </Row>
+    >
+      <IonIcon
+        className="canChange"
+        icon={star}
+        color="primary"
+        size="small"
+      />
+      {props.rating}
+      <RatingLabel>
+        {props.rating < 1 ? (
+          <>Terrible</>
+        ) : props.rating < 2 ? (
+          <>Average</>
+        ) : props.rating < 3 ? (
+          <>Ok</>
+        ) : props.rating < 4 ? (
+          <>Good</>
+        ) : props.rating < 4.5 ? (
+          <>Very good</>
+        ) : (
+                    <>Excellent</>
+                  )
+        }
+      </RatingLabel>
+    </RatingContainer>
+    <RatingMeta>({props.ratingCount}+) • {props.food}</RatingMeta>
+  </Row>
 )
+
+const RatingMeta = styled.div`
+  font-size: 14px;
+`
 
 const Row = styled.div`
   display: flex;
@@ -106,7 +110,8 @@ const RatingContainer = styled.div`
 
     > .canChange {
       fill: limegreen !important;
-      margin-right: 8px;
+      margin-right: 8pximport Rating from './Rating';
+;
     }
   }
 `

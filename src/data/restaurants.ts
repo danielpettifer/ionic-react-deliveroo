@@ -1,6 +1,7 @@
 export interface Restaurant {
   status: string;
   name: string;
+  address: string;
   rating: number;
   ratingCount: number;
   food: string;
@@ -17,6 +18,7 @@ const restaurants: Restaurant[] = [
     id: 0,
     status: 'Open',
     name: 'Rusty Bike',
+    address: 'home',
     rating: 4.4,
     ratingCount: 50,
     food: 'Thai, Curry',
@@ -30,6 +32,7 @@ const restaurants: Restaurant[] = [
     id: 1,
     status: 'Open',
     name: 'KFC',
+    address: 'home',
     rating: 3.1,
     ratingCount: 710,
     food: 'Fried Chicken',
@@ -43,6 +46,7 @@ const restaurants: Restaurant[] = [
     id: 2,
     status: 'Open',
     name: 'McDonalds',
+    address: 'home',
     rating: 3.2,
     ratingCount: 230,
     food: 'Burgers, Fast food',
@@ -56,6 +60,7 @@ const restaurants: Restaurant[] = [
     id: 3,
     status: 'Open',
     name: 'HotBox Spitlafields',
+    address: 'home',
     rating: 4.6,
     ratingCount: 1230,
     food: 'Barbecue',
