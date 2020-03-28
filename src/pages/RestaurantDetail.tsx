@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Restaurant, getRestaurant } from '../data/restaurants';
+import { MenuItem, getMenuItems } from '../data/menuItems';
 import {
     IonContent,
     IonPage,
@@ -10,22 +11,31 @@ import {
     IonBackButton,
     IonTitle,
     useIonViewWillEnter,
-    IonIcon
+    IonIcon,
+    IonList,
+    IonItem
 } from '@ionic/react';
 import { RouteComponentProps } from 'react-router';
 import styled from '../../node_modules/styled-components';
 import { arrowBack, shareOutline, search } from 'ionicons/icons';
 import { ScrollDetail } from '@ionic/core';
+import Rating from '../components/Rating';
+import LocationMap from '../components/LocationMap';
+import MenuListItem from '../components/MenuListItem';
 
 interface ViewRestaurantProps extends RouteComponentProps<{ id: string; }> { }
 
 const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
+    const restaurantRef = useRef(undefined);
     const [height, setHeight] = useState(0);
     const [restaurant, setRestaurant] = useState<Restaurant>();
+    const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
 
     useIonViewWillEnter(() => {
         const rstrnt = getRestaurant(parseInt(match.params.id, 10));
         setRestaurant(rstrnt);
+        const mntms = getMenuItems();
+        setMenuItems(mntms);
     });
 
     const onScroll = (e: CustomEvent<ScrollDetail>) => {
@@ -38,7 +48,7 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
     }
 
     return (
-        <IonPage>
+        <IonPage ref={restaurantRef}>
             <IonHeader>
                 <IonToolbar className="start-opacity-zero">
                     <IonButtons slot="start">
@@ -77,30 +87,28 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
                         <><img alt="Restaurant" src={restaurant.image} /></>
                     ) : (<></>)}
                 </HeaderImage>
-                <ContentWrapper>
-                    <ContentHeader>
-                        {restaurant ? (<>{restaurant.name}</>) : <>Unkown</>}
-                    </ContentHeader>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
 
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                    <h1>row</h1>
-                </ContentWrapper>
+                {restaurant ? (
+                    <ContentWrapper>
+                        <ContentHeader>
+                            {restaurant.name}
+                        </ContentHeader>
+                        <ContentSubHeader>
+                            <Rating
+                                rating={restaurant.rating}
+                                ratingCount={restaurant.ratingCount}
+                                food={restaurant.food}
+                            />
+                            <LocationMap
+                                restaurantRef={restaurantRef.current}
+                            />
+                        </ContentSubHeader>
+                        <IonList>
+                            {menuItems.map(i => <MenuListItem key={i.id} menuItem={i} />)}
+
+                        </IonList>
+                        <SpaceLarge />
+                    </ContentWrapper>) : null}
 
 
             </IonContent>
@@ -109,20 +117,30 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
     );
 };
 
+const SpaceLarge = styled.div`
+    height: 1000px;
+`
+
 const ContentHeader = styled.div`
     font-size:20px;
     color:#000;
     font-weight: 800;
-    padding: 16px 16px 32px;
+    padding: 16px 16px 0;
     background: white;
     position: relative;
     top: -34px;
+    margin-bottom: -32px;
+`
+
+const ContentSubHeader = styled.div`
+    padding: 16px;
 `
 
 const ContentWrapper = styled.div`
     z-index: 9999999999;
     position: relative;
     background: white;
+    font-size: 14px;
 `
 
 const HeaderImage = styled.div`
