@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-  IonCard,
-  IonLabel
+  IonItem,
+  IonLabel,
+  IonThumbnail
 } from '@ionic/react';
 import { MenuItem } from '../data/menuItems';
 import { Restaurant } from '../data/restaurants';
@@ -15,31 +16,61 @@ interface MenuItemProps {
 const MenuListItem: React.FC<MenuItemProps> = ({ menuItem }) => {
 
   return (
-    <IonCard
+    <IonItem
+      className="menu-item"
       routerLink={`/home/restaurantdetail/menuitemdetail/${menuItem.id}`}
+      detail={false}
+      lines="full"
     >
-
-      <img
-        className="card-image-wide"
-        src={menuItem.image}
-        alt="restaurant"
-      />
+      <IonThumbnail slot="end">
+        <img
+          className="thumbnail-large"
+          src={menuItem.image}
+          alt="item"
+        />
+      </IonThumbnail>
 
       <IonLabel>
         <Name>{menuItem.name}</Name>
+        <Description>{menuItem.description}</Description>
+        <Row>
+          <Price>£{menuItem.price.toFixed(2)}</Price>
+          {menuItem.popular &&
+            <Popular>• Popular</Popular>
+          }
+        </Row>
       </IonLabel>
-    </IonCard>
+    </IonItem>
   );
 };
 
+const Popular = styled.div`
+  color: orange;
+  margin-left: 4px;
+  font-size: 12px;`
 
+const Row = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+`
+
+const Price = styled.div`
+  font-size: 12px;
+  color: var(--ion-color-medium-tint);
+`
+
+const Description = styled.div`
+  display: block;
+  font-size: 12px;
+  color: var(--ion-color-medium-tint);
+`
 
 const Name = styled.div`
   font-size: 14px;
-  font-weight: 800;
-  margin-top: 12px;
+  font-weight: 600;
   color: black;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 `
 
 
