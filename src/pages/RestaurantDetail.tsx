@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Restaurant, getRestaurant } from '../data/restaurants';
+import { MenuItem, getMenuItems } from '../data/menuItems';
 import {
     IonContent,
     IonPage,
@@ -10,7 +11,9 @@ import {
     IonBackButton,
     IonTitle,
     useIonViewWillEnter,
-    IonIcon
+    IonIcon,
+    IonList,
+    IonItem
 } from '@ionic/react';
 import { RouteComponentProps } from 'react-router';
 import styled from '../../node_modules/styled-components';
@@ -18,6 +21,7 @@ import { arrowBack, shareOutline, search } from 'ionicons/icons';
 import { ScrollDetail } from '@ionic/core';
 import Rating from '../components/Rating';
 import LocationMap from '../components/LocationMap';
+import MenuListItem from '../components/MenuListItem';
 
 interface ViewRestaurantProps extends RouteComponentProps<{ id: string; }> { }
 
@@ -25,10 +29,13 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
     const restaurantRef = useRef(undefined);
     const [height, setHeight] = useState(0);
     const [restaurant, setRestaurant] = useState<Restaurant>();
+    const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
 
     useIonViewWillEnter(() => {
         const rstrnt = getRestaurant(parseInt(match.params.id, 10));
         setRestaurant(rstrnt);
+        const mntms = getMenuItems();
+        setMenuItems(mntms);
     });
 
     const onScroll = (e: CustomEvent<ScrollDetail>) => {
@@ -96,9 +103,13 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
                                 restaurantRef={restaurantRef.current}
                             />
                         </ContentSubHeader>
+                        <IonList>
+                            <IonItem></IonItem>
+                        </IonList>
                         <SpaceLarge />
                     </ContentWrapper>) : null}
 
+                {menuItems.map(i => <MenuListItem key={i.id} menuItem={i} />)}
 
             </IonContent>
 
