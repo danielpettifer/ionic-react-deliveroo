@@ -4,18 +4,19 @@ import {
   IonLabel
 } from '@ionic/react';
 import { MenuItem } from '../data/menuItems';
+import { Restaurant } from '../data/restaurants';
 import styled from '../../node_modules/styled-components';
 
 interface MenuItemProps {
   menuItem: MenuItem;
 }
 
+
 const MenuListItem: React.FC<MenuItemProps> = ({ menuItem }) => {
 
   return (
     <IonCard
-      className="card-width-large"
-      routerLink={`/home/restaurantdetail/${menuItem.id}`}
+      routerLink={`/home/restaurantdetail/menuitemdetail/${menuItem.id}`}
     >
 
       <img

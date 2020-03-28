@@ -104,12 +104,12 @@ const RestaurantDetail: React.FC<ViewRestaurantProps> = ({ match }) => {
                             />
                         </ContentSubHeader>
                         <IonList>
-                            <IonItem></IonItem>
+                            {menuItems.map(i => <MenuListItem key={i.id} menuItem={i} />)}
+
                         </IonList>
                         <SpaceLarge />
                     </ContentWrapper>) : null}
 
-                {menuItems.map(i => <MenuListItem key={i.id} menuItem={i} />)}
 
             </IonContent>
 

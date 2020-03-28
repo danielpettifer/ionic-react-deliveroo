@@ -29,8 +29,8 @@ const MenuItemDetail: React.FC<ViewMenuItemProps> = ({ match }) => {
                 <IonToolbar>
                     <IonButtons slot="start">
                         <IonBackButton
-                            defaultHref="/account"
-                            text="My Orders"
+                            defaultHref="/home/restaurantdetail/"
+                            text=""
                         />
 
                     </IonButtons>
